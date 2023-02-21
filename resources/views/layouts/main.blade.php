@@ -80,7 +80,7 @@
             <div class="float-right d-none d-sm-block">
                 <b>Version</b> 3.0
             </div>
-            <strong>Copyright &copy; 2021-2026 <a href="https://sulut.bps.go.id">BPS Provinsi Sulawesi Utara</a>.</strong> All rights
+            <strong>Copyright &copy; 2022 <a href="https://sulut.bps.go.id">BPS Provinsi Sulawesi Utara</a>.</strong> All rights
             reserved.
         </footer>
 
