@@ -15,11 +15,16 @@ class DashboardController extends Controller
 
         $perjanjian_kinerja = PerjanjianKinerja::where('satker_id', $satker)->where('tahun','=', $tahun)->get();
 
-        return view('dashboard', [
-            "title" => "Dashboard",
-            "menu" => "Dashboard",
-            "daftar_tahun" => $daftar_tahun,
-            "perjanjian_kinerja" => $perjanjian_kinerja,
+        return view('pages.dashboard', [
+            'title' => 'Dashboard',
+            'menu' => 'Dashboard',
+            'daftar_tahun' => $daftar_tahun,
+            'perjanjian_kinerja' => $perjanjian_kinerja,
         ]);
+    }
+
+    public function dashboard2()
+    {
+        return view('dashboard');
     }
 }

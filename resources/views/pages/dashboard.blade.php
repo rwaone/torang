@@ -1,4 +1,4 @@
-@extends('layouts.main')
+<x-main-layout>
 
 @section('head')
 @endsection
@@ -506,3 +506,5 @@
         })
     </script>
 @endsection
+
+</x-main-layout>

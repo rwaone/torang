@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>TORANG | {{$title}} </title>
+    <title>TORANG | {{ isset($title) ? $title : '' }} </title>
     <link rel="icon" href="{{ asset('logo/logo-torang.png') }}">
 
     <!-- Google Font: Source Sans Pro -->
