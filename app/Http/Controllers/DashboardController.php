@@ -15,7 +15,7 @@ class DashboardController extends Controller
 
         $perjanjian_kinerja = PerjanjianKinerja::where('satker_id', $satker)->where('tahun','=', $tahun)->get();
 
-        return view('pages.dashboard', [
+        return view('dashboard', [
             "title" => "Dashboard",
             "menu" => "Dashboard",
             "daftar_tahun" => $daftar_tahun,
