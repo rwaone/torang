@@ -55,7 +55,7 @@ class TimkerjaController extends Controller
             'ketua_id' => 'required'
         ]);
 
-        $validatedData['tahun'] = 2022;
+        $validatedData['tahun'] = $request->tahun;
 
         $anggotas = $request->anggota;
         $data_anggota = [];

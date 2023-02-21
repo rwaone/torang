@@ -26,7 +26,18 @@
                 <!-- /.card-header -->
                 <div class="card-body table-reponsive">
                     <form action="/timkerja" method="post">
-                        @csrf
+                        @csrf                        
+
+                        <div class="form-group">
+                            <label class="control-label" for="tahun">Tahun:</label>
+                            <select id="tahun" class="form-control select2bs4" name="tahun" required>
+                                <option value="" disabled selected>Pilih Tahun</option>
+                                <option {{ old('tahun') == 2023 ? "selected" : "" }} value='2023'>2023</option>
+                                <option {{ old('tahun') == 2022 ? "selected" : "" }} value='2022'>2022</option>
+                            </select>
+                            <div class="help-block"></div>
+                        </div>
+
                         <div class="form-group">
                             <label class="control-label" for="nama">Nama Tim Kerja:</label>
                             <input type="text" id="nama" class="form-control @error('nama') is-invalid @enderror" name="nama"
