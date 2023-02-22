@@ -16,7 +16,7 @@ class is_ketua
      */
     public function handle(Request $request, Closure $next)
     {
-        if (session('ketua') == 1 || auth()->user()->role == 'Admin' || auth()->user()->role == 'Super Admin'){
+        if (session('ketua') == 1 || auth()->user()->role == 'Admin Satker' || auth()->user()->role == 'Admin Provinsi'){
             return $next($request);
         }
         abort(403);

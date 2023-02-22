@@ -16,6 +16,7 @@ class PerjanjianKinerjaSeeder extends Seeder
     {
         PerjanjianKinerja::create([
             'tahun' => 2022,
+            'satker_id' => '7100',
             'tujuan' => 'Menyediakan data statistik untuk dimanfaatkan sebagai dasar pembangunan',
             'sasaran' => 'Meningkatnya pemanfaatan data statistik yang berkualitas',
             'indikator' => 'Persentase pengguna data yang menggunakan data BPS sebagai dasar perencanaan, monitoring dan evaluasi pembangunan (%)',
@@ -25,6 +26,7 @@ class PerjanjianKinerjaSeeder extends Seeder
 
         PerjanjianKinerja::create([
             'tahun' => 2022,
+            'satker_id' => '7100',
             'tujuan' => 'Menyediakan data statistik untuk dimanfaatkan sebagai dasar pembangunan',
             'sasaran' => 'Meningkatnya pemanfaatan data statistik yang berkualitas',
             'indikator' => 'Persentase publikasi statistik yang menerapkan standard akurasi (%)',
@@ -34,6 +36,7 @@ class PerjanjianKinerjaSeeder extends Seeder
 
         PerjanjianKinerja::create([
             'tahun' => 2022,
+            'satker_id' => '7100',
             'tujuan' => 'Meningkatnya kolaborasi, integrasi, dan standarisasi dalam penyelenggaraan SSN',
             'sasaran' => 'Penguatan komitmen K/L/D/I terhadap SSN',
             'indikator' => 'Persentase Organisasi Perangkat Daerah (OPD) yang mendapatkan rekomendasi kegiatan statistik (%)',
@@ -43,6 +46,7 @@ class PerjanjianKinerjaSeeder extends Seeder
 
         PerjanjianKinerja::create([
             'tahun' => 2022,
+            'satker_id' => '7100',
             'tujuan' => 'Meningkatnya kolaborasi, integrasi, dan standarisasi dalam penyelenggaraan SSN',
             'sasaran' => 'Penguatan komitmen K/L/D/I terhadap SSN',
             'indikator' => 'Persentase Organisasi Perangkat Daerah (OPD) yang menyampaikan metadata sektora sesuai standar (%)',
@@ -52,6 +56,7 @@ class PerjanjianKinerjaSeeder extends Seeder
 
         PerjanjianKinerja::create([
             'tahun' => 2022,
+            'satker_id' => '7100',
             'tujuan' => 'Meningkatnya pelayanan prima dalam penyelenggaraan SSN',
             'sasaran' => 'Penguatan statistik sektoral K/L/D/I',
             'indikator' => 'Persentase Organisasi Perangkat Daerah (OPD) yang mendapatkan pembinaan statistik (%)',
@@ -61,6 +66,7 @@ class PerjanjianKinerjaSeeder extends Seeder
 
         PerjanjianKinerja::create([
             'tahun' => 2022,
+            'satker_id' => '7100',
             'tujuan' => 'Penguatan tata kelola kelembagaan dan reformasi birokrasi',
             'sasaran' => 'SDM statistik yang unggul dan berdaya saing dalam kerangka tata kelolaan kelembagaan',
             'indikator' => 'Hasil Penilaian Implementasi SAKIP',
@@ -70,6 +76,7 @@ class PerjanjianKinerjaSeeder extends Seeder
 
         PerjanjianKinerja::create([
             'tahun' => 2022,
+            'satker_id' => '7100',
             'tujuan' => 'Penguatan tata kelola kelembagaan dan reformasi birokrasi',
             'sasaran' => 'SDM statistik yang unggul dan berdaya saing dalam kerangka tata kelolaan kelembagaan',
             'indikator' => 'Persentase kepuasan pengguna data terhadap sarana dan prasarana pelayanan BPS Provinsi (%)',

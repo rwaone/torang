@@ -99,10 +99,6 @@ class JabatanSeeder extends Seeder
             'kode' => 'apk',
         ]);
         Jabatan::create([
-            'nama' => 'Pranata Keuangan APBN Mahir',
-            'kode' => 'keuangan',
-        ]);
-        Jabatan::create([
             'nama' => 'Arsiparis Ahli Madya',
             'kode' => 'arsiparis',
         ]);
@@ -113,6 +109,26 @@ class JabatanSeeder extends Seeder
         Jabatan::create([
             'nama' => 'Arsiparis Ahli Pertama',
             'kode' => 'arsiparis',
+        ]);
+        Jabatan::create([
+            'nama' => 'Pengelola Pengadaan Barang dan Jasa Ahli Madya',
+            'kode' => 'ppbj',
+        ]);
+        Jabatan::create([
+            'nama' => 'Pengelola Pengadaan Barang dan Jasa Ahli Muda',
+            'kode' => 'ppbj',
+        ]);
+        Jabatan::create([
+            'nama' => 'Pengelola Pengadaan Barang dan Jasa Ahli Pertama',
+            'kode' => 'ppbj',
+        ]);
+        Jabatan::create([
+            'nama' => 'Pranata Keuangan APBN Mahir',
+            'kode' => 'keuangan',
+        ]);
+        Jabatan::create([
+            'nama' => 'Pranata Keuangan APBN Terampil',
+            'kode' => 'keuangan',
         ]);
     }
 }

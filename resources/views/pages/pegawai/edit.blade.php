@@ -46,7 +46,7 @@
                         <div class="form-group">
                             <label class="control-label" for="gelar_depan">Gelar Depan:</label>
                             <input type="text" id="gelar_depan" class="form-control @error('gelar_depan') is-invalid @enderror" name="gelar_depan"
-                                required value="{{ old('gelar_depan',$pegawai->gelar_depan) }}">
+                             value="{{ old('gelar_depan',$pegawai->gelar_depan) }}">
                             @error('gelar_depan')
                                 <div class="invalid-feedback">
                                     {{ $message }}
@@ -58,7 +58,7 @@
                         <div class="form-group">
                             <label class="control-label" for="gelar_belakang">Gelar Belakang:</label>
                             <input type="text" id="gelar_belakang" class="form-control @error('gelar_belakang') is-invalid @enderror" name="gelar_belakang"
-                                required value="{{ old('gelar_belakang',$pegawai->gelar_belakang) }}">
+                                 value="{{ old('gelar_belakang',$pegawai->gelar_belakang) }}">
                             @error('gelar_belakang')
                                 <div class="invalid-feedback">
                                     {{ $message }}

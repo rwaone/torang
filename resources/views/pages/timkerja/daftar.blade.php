@@ -12,23 +12,55 @@
 @section('container')
     <!-- Default box -->
     <div class="card">
-        <div class="card-header">
-            <div class="float-start">
-                <a href="/timkerja/create" class="btn btn-success">
-                    <small><i class="fas fa-plus nav-icon"></i></small>
-                    Tambah
-                </a>
+        <!-- form start -->
+        <form class="form-horizontal">
+            <div class="card-body">
+                
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label" for="tahun">Tahun:</label>
+                    <select id="tahunSelect" class="form-control col-sm-10 select2bs4" name="tahun" required>
+                        <option value="" disabled selected>Pilih Tahun</option>
+                        <option value='2023'>2023</option>
+                        <option value='2022'>2022</option>
+                    </select>
+                    <div class="help-block"></div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label" for="satker_id">Satuan Kerja:</label>
+                    <select id="satkerSelect" class="form-control col-sm-10 select2bs4" name="satker_id" required>
+                        <option value="" disabled selected>Pilih Satker</option>
+                        @foreach ($satkers as $satker)
+                            <option value="{{ $satker->id }}">{{ $satker->nama }}</option>
+                        @endforeach
+                    </select>
+                    <div class="help-block"></div>
+                </div>
+
+                <div>
+                    <a href="/timkerja/create" class="btn btn-success float-right">
+                        <small><i class="fas fa-plus nav-icon"></i></small>
+                        Tambah
+                    </a>
+                </div>
+                <!-- /.card-body -->
             </div>
+        </form>
+    </div>
+    <!-- /.card -->
+    <div class="card">
+        {{-- <div class="card-header">
             <div class="card-tools">
-                {{-- <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
             <i class="fas fa-minus"></i>
           </button>
           <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
             <i class="fas fa-times"></i>
-          </button> --}}
+          </button>
             </div>
-        </div>
+        </div> --}}
         <div class="card-body">
+
             <table id="tabeltimkerja" class="table table-striped table-hover projects">
                 <thead>
                     <tr>
@@ -147,7 +179,7 @@
     <script>
         $(function() {
             $("#tabeltimkerja").DataTable({
-                "ordering" : false,
+                "ordering": false,
                 "responsive": true,
                 "lengthChange": false,
                 "autoWidth": false,

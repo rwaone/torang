@@ -111,7 +111,7 @@
                         </li>
                     @endcan
                 </ul>
-            </li>
+            {{-- </li>
             <li class="nav-item {{ $menu === 'SKP' ? 'menu-open' : '' }}">
                 <a href="#" class="nav-link {{ $menu === 'SKP' ? 'active' : '' }}">
                     <i class="nav-icon fas fa-book"></i>
@@ -146,7 +146,7 @@
                         </a>
                     </li>
                 </ul>
-            </li>
+            </li> --}}
             <li class="nav-item {{ $menu === 'Rekapitulasi' ? 'menu-open' : '' }}">
                 <a href="#" class="nav-link {{ $menu === 'Rekapitulasi' ? 'active' : '' }}">
                     <i class="nav-icon fas fa-chart-pie"></i>
@@ -177,13 +177,13 @@
                             <p>CKP</p>
                         </a>
                     </li>
-                    <li class="nav-item">
+                    {{-- <li class="nav-item">
                         <a href="{{url('/rekap/skp/')}}"
                             class="nav-link {{ $title === 'SKP' ? 'active' : '' }}">
                             <i class="far fa-circle nav-icon"></i>
                             <p>SKP</p>
                         </a>
-                    </li>
+                    </li> --}}
                 </ul>
             </li>
             <li class="nav-item {{ $menu === 'SDM' ? 'menu-open' : '' }}">
@@ -209,7 +209,7 @@
                     </li>
                 </ul>
             </li>
-            @can('admin')
+            {{-- @can('admin') --}}
                 <li class="nav-header">Pengaturan</li>
                 <li class="nav-item">
                     <a href="/user" class="nav-link" {{ $title === 'User' ? 'active' : '' }}>
@@ -227,7 +227,7 @@
                         </p>
                     </a>
                 </li> --}}
-            @endcan
+            {{-- @endcan --}}
 
         </ul>
     </nav>

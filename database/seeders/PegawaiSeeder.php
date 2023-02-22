@@ -20,7 +20,7 @@ class PegawaiSeeder extends Seeder
             'gelar_belakang' => ', SST, M.Ec.Dev.',
             'nip_lama' => '340015744',
             'nip_baru' => '197609271999011001',
-            'golongan_id' => 4,
+            'golongan_id' => 3,
             'jabatan_id' => 1,
             'satker_id' => '7100',
             'atasan_id' =>'1',
@@ -141,7 +141,7 @@ class PegawaiSeeder extends Seeder
             'nip_lama' => '340058942',
             'nip_baru' => '199604202019011002',
             'golongan_id' => 9,
-            'jabatan_id' => 9,
+            'jabatan_id' => 12,
             'satker_id' => '7100',
             'atasan_id' =>'1',
             'status' => 'Aktif'
@@ -273,7 +273,7 @@ class PegawaiSeeder extends Seeder
             'nip_lama' => '340013445',
             'nip_baru' => '196511231992122001',
             'golongan_id' => 6,
-            'jabatan_id' => 5,
+            'jabatan_id' => 23,
             'satker_id' => '7100',
             'atasan_id' =>'2',
             'status' => 'Aktif'
@@ -333,7 +333,7 @@ class PegawaiSeeder extends Seeder
             'nip_lama' => '340016038',
             'nip_baru' => '197710111999121001',
             'golongan_id' => 6,
-            'jabatan_id' => 5,
+            'jabatan_id' => 26,
             'satker_id' => '7100',
             'atasan_id' =>'2',
             'status' => 'Aktif'
@@ -801,7 +801,7 @@ class PegawaiSeeder extends Seeder
             'nip_lama' => '340060228',
             'nip_baru' => '199901052021041001',
             'golongan_id' => 9,
-            'jabatan_id' => 5,
+            'jabatan_id' => 12,
             'satker_id' => '7100',
             'atasan_id' =>'1',
             'status' => 'Aktif'
@@ -813,7 +813,7 @@ class PegawaiSeeder extends Seeder
             'nip_lama' => '340060268',
             'nip_baru' => '199810132021041001',
             'golongan_id' => 9,
-            'jabatan_id' => 5,
+            'jabatan_id' => 12,
             'satker_id' => '7100',
             'atasan_id' =>'1',
             'status' => 'Aktif'
@@ -898,6 +898,138 @@ class PegawaiSeeder extends Seeder
             'nip_baru' => '199405192016021001',
             'golongan_id' => 8,
             'jabatan_id' => 8,
+            'satker_id' => '7100',
+            'atasan_id' =>'1',
+            'status' => 'Aktif'
+        ]);
+        Pegawai::create([
+            'nama' => 'Ratriani Retno Wardani',
+            'gelar_depan' => '',
+            'gelar_belakang' => ', S.Tr.Stat.',
+            'nip_lama' => '340060872',
+            'nip_baru' => '199903202022012004',
+            'golongan_id' => 9,
+            'jabatan_id' => 12,
+            'satker_id' => '7100',
+            'atasan_id' =>'1',
+            'status' => 'Aktif'
+        ]);
+        Pegawai::create([
+            'nama' => 'Putri Sekarsinung',
+            'gelar_depan' => '',
+            'gelar_belakang' => ', S.Tr.Stat.',
+            'nip_lama' => '340059711',
+            'nip_baru' => '199701052019122001',
+            'golongan_id' => 9,
+            'jabatan_id' => 9,
+            'satker_id' => '7100',
+            'atasan_id' =>'1',
+            'status' => 'Aktif'
+        ]);
+        Pegawai::create([
+            'nama' => 'Nurul Hayati Unonongo',
+            'gelar_depan' => '',
+            'gelar_belakang' => ', SST',
+            'nip_lama' => '340057881',
+            'nip_baru' => '199311112017012002',
+            'golongan_id' => 8,
+            'jabatan_id' => 22,
+            'satker_id' => '7100',
+            'atasan_id' =>'1',
+            'status' => 'Aktif'
+        ]);
+        Pegawai::create([
+            'nama' => 'Herman Tinungki',
+            'gelar_depan' => '',
+            'gelar_belakang' => ', SE',
+            'nip_lama' => '340011442',
+            'nip_baru' => '196703311986031002',
+            'golongan_id' => 6,
+            'jabatan_id' => 8,
+            'satker_id' => '7100',
+            'atasan_id' =>'1',
+            'status' => 'Aktif'
+        ]);
+        Pegawai::create([
+            'nama' => 'Friska Patricia Raintung',
+            'gelar_depan' => '',
+            'gelar_belakang' => ', S.E.',
+            'nip_lama' => '340061312',
+            'nip_baru' => '198912292022032007',
+            'golongan_id' => 9,
+            'jabatan_id' => 28,
+            'satker_id' => '7100',
+            'atasan_id' =>'1',
+            'status' => 'Aktif'
+        ]);
+        Pegawai::create([
+            'nama' => 'Mustika Aridya Arum',
+            'gelar_depan' => '',
+            'gelar_belakang' => ', A.Md.Kb.N',
+            'nip_lama' => '340061105',
+            'nip_baru' => '200104112022012001',
+            'golongan_id' => 11,
+            'jabatan_id' => 29,
+            'satker_id' => '7100',
+            'atasan_id' =>'1',
+            'status' => 'Aktif'
+        ]);
+        Pegawai::create([
+            'nama' => 'Agustinus Dirga Istanto Mantow',
+            'gelar_depan' => '',
+            'gelar_belakang' => ', SE, M.Ak.',
+            'nip_lama' => '340061105',
+            'nip_baru' => '200104112022012001',
+            'golongan_id' => 7,
+            'jabatan_id' => 5,
+            'satker_id' => '7100',
+            'atasan_id' =>'1',
+            'status' => 'Aktif'
+        ]);
+        Pegawai::create([
+            'nama' => 'Rozan Fikri',
+            'gelar_depan' => '',
+            'gelar_belakang' => ', S.Tr.Stat.',
+            'nip_lama' => '340060306',
+            'nip_baru' => '199801122021041001',
+            'golongan_id' => 9,
+            'jabatan_id' => 12,
+            'satker_id' => '7100',
+            'atasan_id' =>'1',
+            'status' => 'Aktif'
+        ]);
+        Pegawai::create([
+            'nama' => 'Eldorado Alfu Ilmi',
+            'gelar_depan' => '',
+            'gelar_belakang' => ', S.Tr.Stat.',
+            'nip_lama' => '340058702',
+            'nip_baru' => '199611272019011002',
+            'golongan_id' => 9,
+            'jabatan_id' => 9,
+            'satker_id' => '7100',
+            'atasan_id' =>'1',
+            'status' => 'Aktif'
+        ]);
+        Pegawai::create([
+            'nama' => 'Destiana Fitri',
+            'gelar_depan' => '',
+            'gelar_belakang' => ', S.Tr.Stat.',
+            'nip_lama' => '340058672',
+            'nip_baru' => '199609292019012001',
+            'golongan_id' => 9,
+            'jabatan_id' => 9,
+            'satker_id' => '7100',
+            'atasan_id' =>'1',
+            'status' => 'Aktif'
+        ]);
+        Pegawai::create([
+            'nama' => 'Intan Angelia Senduk',
+            'gelar_depan' => '',
+            'gelar_belakang' => ', S.Tr.Stat.',
+            'nip_lama' => '340057429',
+            'nip_baru' => '199203262016022001',
+            'golongan_id' => 9,
+            'jabatan_id' => 11,
             'satker_id' => '7100',
             'atasan_id' =>'1',
             'status' => 'Aktif'

@@ -17,11 +17,17 @@ class TimkerjaController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
+    {        
+        if (auth()->user()->role == 'Admin Provinsi') {
+            $satker = Satker::all();
+        }else {
+            $satker = Satker::where('id',auth()->user()->pegawai->satker_id)->get();
+        }
         $satker_id = auth()->user()->pegawai->satker_id;
         return view('pages.timkerja.daftar', [
             "title" => "Tim Kerja",
             "menu" => "SDM",
+            "satkers" => $satker,
             "timkerjas" => Timkerja::where('satker_id',$satker_id)->get(),
         ]);
     }

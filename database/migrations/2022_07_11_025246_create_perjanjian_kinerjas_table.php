@@ -16,12 +16,13 @@ class CreatePerjanjianKinerjasTable extends Migration
         Schema::create('perjanjian_kinerjas', function (Blueprint $table) {
             $table->id();
             $table->year('tahun');
+            $table->foreignId('satker_id');
             $table->string('tujuan');
             $table->string('sasaran');
             $table->string('indikator');
             $table->string('satuan');
             $table->integer('target');
-            $table->integer('realisasi');
+            $table->integer('realisasi')->nullable(True);
             $table->timestamps();
         });
 

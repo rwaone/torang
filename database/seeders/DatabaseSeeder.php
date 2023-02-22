@@ -40,7 +40,7 @@ class DatabaseSeeder extends Seeder
             'username' => 'ridwanst',
             'email' => 'ridwanst@bps.go.id',
             'pegawai_id' => 11,
-            'role' => 'Admin',
+            'role' => 'Admin Provinsi',
             'email_verified_at' => now(),
             'password' => Hash::make('misterwan'),
             'remember_token' => '',

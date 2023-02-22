@@ -170,8 +170,8 @@
                 </div>
                 <!-- /.card-body -->
                 <div class="card-footer clearfix">
-                    {{-- <button type="button" class="btn btn-primary float-right"><i class="fas fa-plus"></i> Add
-                        item</button> --}}
+                    <button type="button" class="btn btn-primary float-right"><i class="fas fa-plus"></i> Add
+                        item</button>
                 </div>
             </div>
             <!-- /.card -->
@@ -182,16 +182,8 @@
             <!-- TO DO List -->
 
             <div class="card">
-                <div class="card-header border-0">
-                    <h3 class="card-title">Products</h3>
-                    <div class="card-tools">
-                        <a href="#" class="btn btn-tool btn-sm">
-                            <i class="fas fa-download"></i>
-                        </a>
-                        <a href="#" class="btn btn-tool btn-sm">
-                            <i class="fas fa-bars"></i>
-                        </a>
-                    </div>
+                <div class="card-header border">
+                    <h3 class="card-title">Kegiatan Telah Dinilai</h3>
                 </div>
                 <div class="card-body table-responsive p-0">
                     <table class="table table-striped table-valign-middle">
@@ -291,86 +283,7 @@
             </div>
             <!-- /.card -->
         </div>
-
-        <div class="col-md-12">
-            <div class="card">
-                <div class="card-header">
-                    <h5 class="card-title">Monthly Recap Report</h5>
-
-                </div>
-                <!-- /.card-header -->
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-md-8">
-                            <p class="text-center">
-                                <strong>Sales: 1 Jan, 2014 - 30 Jul, 2014</strong>
-                            </p>
-
-                            <div class="chart">
-                                <!-- Sales Chart Canvas -->
-                                <canvas id="salesChart" height="400"></canvas>
-                            </div>
-                            <!-- /.chart-responsive -->
-                        </div>
-                        <!-- /.col -->
-                        <div class="col-md-4">
-                            <p class="text-center">
-                                <strong>Goal Completion</strong>
-                            </p>
-
-                            <div class="progress-group">
-                                Add Products to Cart
-                                <span class="float-right"><b>160</b>/200</span>
-                                <div class="progress progress-sm">
-                                    <div class="progress-bar bg-primary" style="width: 80%"></div>
-                                </div>
-                            </div>
-                            <!-- /.progress-group -->
-
-                            <div class="progress-group">
-                                Complete Purchase
-                                <span class="float-right"><b>310</b>/400</span>
-                                <div class="progress progress-sm">
-                                    <div class="progress-bar bg-danger" style="width: 75%"></div>
-                                </div>
-                            </div>
-
-                            <!-- /.progress-group -->
-                            <div class="progress-group">
-                                <span class="progress-text">Visit Premium Page</span>
-                                <span class="float-right"><b>480</b>/800</span>
-                                <div class="progress progress-sm">
-                                    <div class="progress-bar bg-success" style="width: 60%"></div>
-                                </div>
-                            </div>
-
-                            <!-- /.progress-group -->
-                            <div class="progress-group">
-                                Send Inquiries
-                                <span class="float-right"><b>250</b>/500</span>
-                                <div class="progress progress-sm">
-                                    <div class="progress-bar bg-warning" style="width: 50%"></div>
-                                </div>
-                            </div>
-                            <!-- /.progress-group -->
-                            <div class="progress-group">
-                                Send Inquiries
-                                <span class="float-right"><b>250</b>/500</span>
-                                <div class="progress progress-sm">
-                                    <div class="progress-bar bg-warning" style="width: 50%"></div>
-                                </div>
-                            </div>
-                            <!-- /.progress-group -->
-                        </div>
-                        <!-- /.col -->
-                    </div>
-                    <!-- /.row -->
-                </div>
-                <!-- ./card-body -->
-            </div>
-            <!-- /.card -->
-        </div>
-
+{{-- 
         <div class="col-12">
             <div class="card card-outline card-primary">
                 <div class="card-header">
@@ -419,7 +332,8 @@
                 <!-- /.card-footer-->
             </div>
             <!-- /.card-->
-        </div>
+        </div> --}}
+
     </div>
 @endsection
 

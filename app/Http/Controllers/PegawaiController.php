@@ -99,12 +99,17 @@ class PegawaiController extends Controller
      */
     public function edit(Pegawai $pegawai)
     {
+        if (auth()->user()->role == 'Admin Provinsi') {
+            $satker = Satker::all();
+        }else {
+            $satker = Satker::where('satker_id', auth()->user()->pegawai()->satker_id);
+        }
         return view('pages.pegawai.edit',[
             "title" => "Tambah Pegawai",
             "menu" => "SDM",
             "pegawai" => $pegawai,
             "jabatans" => Jabatan::all(),
-            "satkers" => Satker::all(),
+            "satkers" => $satker,
             "golongans" => Golongan::all(),
             "strukturals" => collect(Pegawai::all())->where('jabatan_id','<',3)
         ]);
