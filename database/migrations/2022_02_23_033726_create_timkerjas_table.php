@@ -18,7 +18,7 @@ class CreateTimkerjasTable extends Migration
             $table->string('nama');
             $table->foreignId('satker_id');
             $table->foreignId('ketua_id');
-            $table->foreignId('supervisor_id');
+            $table->foreignId('supervisor_id')->nullable();
             $table->smallInteger('tahun');
             $table->timestamps();
         });
