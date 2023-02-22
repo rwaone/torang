@@ -35,7 +35,7 @@
                 </a>
             </li> --}}
             <li class="nav-item {{ $menu === 'Kegiatan' ? 'menu-open' : '' }}">
-                <a href="" class="nav-link {{ $menu === 'Kegiatan' ? 'active' : '' }}">
+                <a href="" class="nav-link {{ Request::is('kegiatan*') ? 'active' : '' }}">
                     <i class="nav-icon fas fa-table"></i>
                     <p>
                         Kegiatan
@@ -43,15 +43,15 @@
                     </p>
                 </a>
                 <ul class="nav nav-treeview">
-                    <li class="nav-item">
+                    {{-- <li class="nav-item">
                         <a href="/kegiatan/create"
                             class="nav-link {{ $title === 'Tambah Kegiatan' ? 'active' : '' }}">
                             <i class="far fa-circle nav-icon"></i>
                             <p>Tambah Kegiatan</p>
                         </a>
-                    </li>
+                    </li> --}}
                     <li class="nav-item">
-                        <a href="/kegiatan" class="nav-link {{ $title === 'Data Kegiatan' ? 'active' : '' }}">
+                        <a href="/kegiatan" class="nav-link {{ Request::is('kegiatan*') ? 'active' : '' }}">
                             <i class="far fa-circle nav-icon"></i>
                             <p>Daftar Kegiatan</p>
                         </a>
