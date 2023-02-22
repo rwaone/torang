@@ -32,7 +32,7 @@
             <a href="/" class="brand-link sidebar-dark-primary">
                 <img src="{{ asset('logo/logo-torang-small.png') }}" alt="AdminLTE Logo"
                     class="brand-image img-circle elevation-3" style="opacity: .8">
-                <span class="brand-text font-weight-dark">TORANG BISA</span>
+                <span class="brand-text font-weight-dark">TORANG</span>
             </a>
 
             <!-- Sidebar -->

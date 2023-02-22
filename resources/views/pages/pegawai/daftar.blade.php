@@ -24,7 +24,7 @@
 
                 <!-- /.card-header -->
                 <div class="card-body table-reponsive">
-                    <div class="float-start">
+                    <div class="float-right">
                         <a href="/pegawai/create" class="btn btn-success">
                             <small><i class="fas fa-plus nav-icon"></i></small>
                             Tambah

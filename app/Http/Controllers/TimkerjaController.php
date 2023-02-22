@@ -28,7 +28,7 @@ class TimkerjaController extends Controller
             "title" => "Tim Kerja",
             "menu" => "SDM",
             "satkers" => $satker,
-            "timkerjas" => Timkerja::where('satker_id',$satker_id)->get(),
+            "timkerjas" => Timkerja::where('satker_id',$satker_id)->where('tahun', 2023)->get(),
         ]);
     }
 
