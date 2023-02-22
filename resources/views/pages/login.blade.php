@@ -56,20 +56,21 @@
                     required>
                 <label for="username">Username</label>
             </div>
+            
             <div class="form-floating">
                 <input type="password" class="form-control" id="floatingPassword" placeholder="Password"
                     name="password" required>
                 <label for="floatingPassword">Password</label>
             </div>
 
-            <div class="form-floating">
+            {{-- <div class="form-floating">
                 <select id="tahun" class="form-control" name="tahun" required>
                     @foreach ($daftar_tahun as $tahun)
                         <option value="{{ $tahun }}">{{ $tahun }}</option>
                     @endforeach
                 </select>
                 <label for="tahun">Tahun</label>
-            </div>
+            </div> --}}
 
             <div class="checkbox mb-3">
                 {{-- <label>
