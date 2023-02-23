@@ -20,7 +20,7 @@ class CreateKegiatansTable extends Migration
             $table->string('nama');
             $table->char('kriteria');
             $table->foreignId('butir_id');
-            $table->foreignId('iki_id')>nullable();
+            $table->foreignId('iki_id')->nullable();
             $table->foreignId('timkerja_id',2)->nullable();
             $table->string('lokasi');
             $table->integer('target');
