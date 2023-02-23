@@ -12,24 +12,24 @@
 
                 <div class="info-box-content">
                     <span class="info-box-text">Kegiatan</span>
-                    <span class="info-box-number">163,921</span>
+                    <span class="info-box-number"></span>
                 </div>
                 <!-- /.info-box-content -->
-                <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                <a href="/kegiatan" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
             <!-- /.info-box -->
             <div class="info-box mb-3 bg-success">
                 <span class="info-box-icon"><i class="far fa-check-circle"></i></span>
 
                 <div class="info-box-content">
-                    <span class="info-box-text">Telah Dinilai</span>
-                    <span class="info-box-number">92,050</span>
+                    <span class="info-box-text">Capaian Kinerja</span>
+                    <span class="info-box-number"></span>
                 </div>
                 <!-- /.info-box-content -->
-                <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                <a href="/ckp/show" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
             <!-- /.info-box -->
-            <div class="info-box mb-3 bg-warning">
+            {{-- <div class="info-box mb-3 bg-warning">
                 <span class="info-box-icon"><i class="fas fa-comment"></i></span>
 
                 <div class="info-box-content">
@@ -49,11 +49,11 @@
                 </div>
                 <!-- /.info-box-content -->
                 <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
+            </div> --}}
             <!-- /.info-box -->
         </div>
 
-        <div class="col-md-4">
+        {{-- <div class="col-md-4">
             <!-- TO DO List -->
             <div class="card">
                 <div class="card-header">
@@ -176,8 +176,40 @@
             </div>
             <!-- /.card -->
 
-        </div>
-
+        </div> --}}
+        
+        <div class="col-md-8">
+            <div class="card">
+              <div class="card-body">
+                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                  <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                  </ol>
+                  <div class="carousel-inner">
+                    <div class="carousel-item-active">
+                      <img class="d-block w-100" src="https://img.freepik.com/free-vector/data-centers-are-data-centers-serve-applications-supporting-business-information-cloud-computing-technology-business-analysis-analytics-research-strategy-statistic-planning-marketing_1150-55220.jpg?w=1480&t=st=1677168700~exp=1677169300~hmac=7481fa1a2a6d0b05111b1c6cf2bb4f5e1e07264d047d6e2cb394bba1bc5e0cb4" alt="Second slide">
+                    </div>
+                  </div>
+                  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <span class="carousel-control-custom-icon" aria-hidden="true">
+                      <i class="fas fa-chevron-left"></i>
+                    </span>
+                    <span class="sr-only">Previous</span>
+                  </a>
+                  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <span class="carousel-control-custom-icon" aria-hidden="true">
+                      <i class="fas fa-chevron-right"></i>
+                    </span>
+                    <span class="sr-only">Next</span>
+                  </a>
+                </div>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+{{-- 
         <div class="col-md-4">
             <!-- TO DO List -->
 
@@ -282,7 +314,7 @@
                 </div>
             </div>
             <!-- /.card -->
-        </div>
+        </div> --}}
 {{-- 
         <div class="col-12">
             <div class="card card-outline card-primary">
