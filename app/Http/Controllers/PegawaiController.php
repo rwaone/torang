@@ -20,10 +20,17 @@ class PegawaiController extends Controller
      */
     public function index()
     {
+        if (auth()->user()->role == 'Admin Provinsi') {
+            $satker = Satker::all();
+        }else {
+            $satker = Satker::where('id',auth()->user()->pegawai->satker_id)->get();
+        }
+        $satker_id = auth()->user()->pegawai->satker_id;
         return view('pages.pegawai.daftar',[
             "title" => "Daftar Pegawai",
             "menu" => "SDM",
-            "pegawais" => Pegawai::all()
+            "satkers" => $satker,
+            "pegawais" => Pegawai::where('satker_id',$satker_id)->get()
         ]);
     }
 

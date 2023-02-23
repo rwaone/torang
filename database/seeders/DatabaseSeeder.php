@@ -24,9 +24,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        Satuan::create([
-            'nama' => 'Dokumen'
-        ]);
         $this->call([
             JabatanSeeder::class,
             GolonganSeeder::class,
@@ -62,12 +59,6 @@ class DatabaseSeeder extends Seeder
             'jabatan_kode' => 'struktural',
             'kode' => 'KBK03',
             'keterangan' => 'Rapat dengan Eksternal',   
-        ]);
-
-        Butir::create([
-            'jabatan_kode' => 'statistisi',
-            'kode' => 'I.A.2',
-            'keterangan' => 'Memeriksa kuesioner sedang',   
         ]);
     }
 }

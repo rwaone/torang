@@ -79,6 +79,7 @@
                             <label class="control-label" for="penilai_id">Pemberi Tugas</label>
                             <select id="penilai_id" class="form-control select2bs4" name="penilai_id" required>
                                 <option value="" selected disabled>Pilih Pemberi Tugas</option>
+                                <option value="NULL">Atasan Langsung</option>
                                 @foreach ($timkerjas as $timkerja)
                                     <option {{ old('timkerja_id') == $timkerja->ketua_id ? 'selected' : '' }}
                                         value="{{ $timkerja->ketua_id }}">{{ $timkerja->nama }}</option>
