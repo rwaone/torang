@@ -211,8 +211,8 @@ class KegiatanController extends Controller
             "menu" => "Kegiatan",
             "satuans" => Satuan::all(),
             "butirs" => Butir::all(),
-            "timkerjas" => Timkerja::all(),
-            "pegawais" => Pegawai::all(),
+            "timkerjas" => Timkerja::where('satker_id', auth()->user()->pegawai->satker_id)->get(),
+            "pegawais" => Pegawai::where('satker_id', auth()->user()->pegawai->satker_id)->get(),
         ]);
     }
 
