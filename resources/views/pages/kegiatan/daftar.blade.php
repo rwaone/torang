@@ -57,7 +57,7 @@
                                     <td class="text-center">{{ $kegiatan->satuan->nama }}</td>
                                     <td class="text-center">{{ $kegiatan->realisasi }}</td>
                                     <td class="text-center">{{ $kegiatan->nilai }}</td>
-                                    <td class="text-center">@if (is_null($kegiatan->timkerja_id))  {{ 'Atasan Langsung'}} @else {{$kegiatan->timkerja->nama}} @endif</td>
+                                    <td class="text-center">{{ $kegiatan->timkerja->nama ?? 'Atasan Langsung' }}</td>
                                     <td class="text-center">
                                         @switch($kegiatan->flag)
                                             @case(0)
