@@ -46,7 +46,7 @@
 
                         @can('admin')
                             <div>
-                                <a href="/timkerja/create" class="btn btn-success float-right">
+                                <a href="/pegawai/create" class="btn btn-success float-right">
                                     <small><i class="fas fa-plus nav-icon"></i></small>
                                     Tambah
                                 </a>
@@ -60,16 +60,6 @@
         <div class="col-12">
             <!-- Default box -->
             <div class="card">
-                @can('admin')
-                    <div class="card-header">
-                        <div class="card-tools">
-                            <a href="/pegawai/create" class="btn btn-success">
-                                <small><i class="fas fa-plus nav-icon"></i></small>
-                                Tambah
-                            </a>
-                        </div>
-                    </div>
-                @endcan
                 <!-- /.card-header -->
                 <div class="card-body table-reponsive">
                     <table id="tabelpegawai" class="table table-striped table-hover text-sm projects">
