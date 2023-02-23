@@ -97,7 +97,7 @@
                 </a>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="/ckp/show/" class="nav-link  {{ Request::is('ckp/show') ? 'active' : '' }}">
+                        <a href="/ckp/show/" class="nav-link  {{ Request::is('ckp/show*') ? 'active' : '' }}">
                             <i class="far fa-circle nav-icon"></i>
                             <p>CKP</p>
                         </a>
