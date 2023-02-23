@@ -957,7 +957,7 @@ class PegawaiSeeder extends Seeder
             'nip_lama' => '340061312',
             'nip_baru' => '198912292022032007',
             'golongan_id' => 9,
-            'jabatan_id' => 28,
+            'jabatan_id' => 27,
             'satker_id' => '7100',
             'atasan_id' =>'1',
             'status' => 'Aktif'
