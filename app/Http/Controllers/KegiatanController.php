@@ -47,7 +47,7 @@ class KegiatanController extends Controller
             "menu" => "Kegiatan",
             "satuans" => Satuan::all(),
             "butirs" => $butir,
-            "timkerjas" => Timkerja::all(),
+            "timkerjas" => Timkerja::where('satker_id', auth()->user()->pegawai->satker_id)->get(),
         ]);
     }
 
