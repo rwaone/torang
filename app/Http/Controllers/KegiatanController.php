@@ -70,7 +70,7 @@ class KegiatanController extends Controller
                 'satuan_id' => 'required',
             ]);
             $validatedData['tanggal'] = date('Y-m-d', strtotime($request['tanggal']));
-            $validatedData['penilai_id'] = auth()->user()->pegawai->id;
+            $validatedData['timkerja_id'] = auth()->user()->pegawai->id;
             $validatedData['flag'] = 0;
             $url = 'kegiatan/penilaian';
         } else {
@@ -140,7 +140,7 @@ class KegiatanController extends Controller
                 'nama' => 'min:6|required',
                 'kriteria' => 'required',
                 'butir_id' => 'required',
-                'penilai_id' => 'required',
+                'timkerja_id' => 'required',
                 'lokasi' => 'required|min:3',
                 'target' => 'required|min:1',
                 'satuan_id' => 'required',
