@@ -63,14 +63,14 @@
                 <label for="floatingPassword">Password</label>
             </div>
 
-            {{-- <div class="form-floating">
+            <div class="form-floating">
                 <select id="tahun" class="form-control" name="tahun" required>
                     @foreach ($daftar_tahun as $tahun)
                         <option value="{{ $tahun }}">{{ $tahun }}</option>
                     @endforeach
                 </select>
                 <label for="tahun">Tahun</label>
-            </div> --}}
+            </div>
 
             <div class="checkbox mb-3">
                 {{-- <label>

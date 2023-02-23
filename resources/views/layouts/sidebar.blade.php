@@ -18,7 +18,7 @@
             <!-- Add icons to the links using the .nav-icon class
              with font-awesome or any other icon font library -->
             <li class="nav-item">
-                <a href="/" class="nav-link {{ $title === 'Dashboard' ? 'active' : '' }}">
+                <a href="/" class="nav-link {{ Request::is('/', 'dashboard') ? 'active' : '' }}">
                     <i class="nav-icon fas fa-th"></i>
                     <p>
                         Dashboard
@@ -34,7 +34,7 @@
                     </p>
                 </a>
             </li> --}}
-            <li class="nav-item {{ $menu === 'Kegiatan' ? 'menu-open' : '' }}">
+            <li class="nav-item {{ Request::is('kegiatan*') ? 'menu-open' : '' }}">
                 <a href="" class="nav-link {{ Request::is('kegiatan*') ? 'active' : '' }}">
                     <i class="nav-icon fas fa-table"></i>
                     <p>
@@ -51,7 +51,7 @@
                         </a>
                     </li> --}}
                     <li class="nav-item">
-                        <a href="/kegiatan" class="nav-link {{ Request::is('kegiatan*') ? 'active' : '' }}">
+                        <a href="/kegiatan" class="nav-link {{ Request::is('kegiatan', 'kegiatan/create', 'kegiatan/{kegiatan}', 'kegiatan/{kegiatan}/edit')  ? 'active' : '' }}">
                             <i class="far fa-circle nav-icon"></i>
                             <p>Daftar Kegiatan</p>
                         </a>
@@ -59,7 +59,7 @@
                     @can('ketua')
                         <li class="nav-item">
                             <a href="/kegiatan/alokasi"
-                                class="nav-link {{ $title === 'Alokasi Kegiatan' ? 'active' : '' }}">
+                                class="nav-link {{ Request::is('kegiatan/alokasi') ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>
                                     Alokasi Kegiatan
@@ -68,7 +68,7 @@
                         </li>
                         <li class="nav-item">
                             <a href="/kegiatan/penilaian"
-                                class="nav-link {{ $title === 'Penilaian Kegiatan' ? 'active' : '' }}">
+                                class="nav-link {{ Request::is('kegiatan/penilaian') ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>
                                     Penilaian Kegiatan
@@ -77,7 +77,7 @@
                         </li>
                         <li class="nav-item">
                             <a href="/kegiatan/timkerja"
-                                class="nav-link {{ $title === 'Kegiatan Tim Kerja' ? 'active' : '' }}">
+                                class="nav-link {{ Request::is('kegiatan/timkerja') ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>
                                     Kegiatan Tim Kerja
@@ -87,8 +87,8 @@
                     @endcan
                 </ul>
             </li>
-            <li class="nav-item {{ $menu === 'CKP' ? 'menu-open' : '' }}">
-                <a href="#" class="nav-link {{ $menu === 'CKP' ? 'active' : '' }}">
+            <li class="nav-item {{ Request::is('ckp*') ? 'menu-open' : '' }}">
+                <a href="#" class="nav-link {{ Request::is('ckp*') ? 'active' : '' }}">
                     <i class="nav-icon fas fa-file"></i>
                     <p>
                         Kinerja Bulanan
@@ -97,14 +97,14 @@
                 </a>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="/ckp/show/" class="nav-link  {{ $title === 'CKP' ? 'active' : '' }}">
+                        <a href="/ckp/show/" class="nav-link  {{ Request::is('ckp/show') ? 'active' : '' }}">
                             <i class="far fa-circle nav-icon"></i>
                             <p>CKP</p>
                         </a>
                     </li>
                     @can('struktural')
                         <li class="nav-item">
-                            <a href="/ckp/daftarApprove" class="nav-link {{ $title === 'Approve CKP' ? 'active' : '' }}">
+                            <a href="/ckp/daftarApprove" class="nav-link {{ Request::is('ckp/approve') ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Approve CKP</p>
                             </a>
@@ -147,8 +147,8 @@
                     </li>
                 </ul>
             </li> --}}
-            <li class="nav-item {{ $menu === 'Rekapitulasi' ? 'menu-open' : '' }}">
-                <a href="#" class="nav-link {{ $menu === 'Rekapitulasi' ? 'active' : '' }}">
+            <li class="nav-item {{ Request::is('rekap*') ? 'menu-open' : '' }}">
+                <a href="#" class="nav-link {{ Request::is('rekap*') ? 'active' : '' }}">
                     <i class="nav-icon fas fa-chart-pie"></i>
                     <p>
                         Rekapitulasi
@@ -158,21 +158,21 @@
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
                         <a href="{{url('/rekap/kegiatan/')}}"
-                            class="nav-link {{ $title === 'Kegiatan Pegawai' ? 'active' : '' }}">
+                            class="nav-link {{ Request::is('rekap/kegiatan') ? 'active' : '' }}">
                             <i class="far fa-circle nav-icon"></i>
                             <p>Kegiatan Pegawai</p>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a href="{{url('/rekap/harian/')}}"
-                            class="nav-link {{ $title === 'Kegiatan Harian' ? 'active' : '' }}">
+                            class="nav-link {{ Request::is('rekap/harian') ? 'active' : '' }}">
                             <i class="far fa-circle nav-icon"></i>
                             <p>Kegiatan Harian</p>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a href="{{url('/rekap/ckp/')}}"
-                            class="nav-link {{ $title === 'Rekap CKP' ? 'active' : '' }}">
+                            class="nav-link {{ Request::is('rekap/ckp') ? 'active' : '' }}">
                             <i class="far fa-circle nav-icon"></i>
                             <p>CKP</p>
                         </a>
@@ -186,8 +186,8 @@
                     </li> --}}
                 </ul>
             </li>
-            <li class="nav-item {{ $menu === 'SDM' ? 'menu-open' : '' }}">
-                <a href="#" class="nav-link {{ $menu === 'SDM' ? 'active' : '' }}">
+            <li class="nav-item {{ Request::is('pegawai*', 'timkerja*') ? 'menu-open' : '' }}">
+                <a href="#" class="nav-link {{ Request::is('pegawai*', 'timkerja*') ? 'active' : '' }}">
                     <i class="nav-icon fas fa-user-tie"></i>
                     <p>
                         SDM
@@ -196,23 +196,23 @@
                 </a>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="/pegawai" class="nav-link {{ $title === 'Daftar Pegawai' ? 'active' : '' }}">
+                        <a href="/pegawai" class="nav-link {{ Request::is('pegawai*') ? 'active' : '' }}">
                             <i class="far fa-circle nav-icon"></i>
                             <p>Pegawai</p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="/timkerja" class="nav-link {{ $title === 'Tim Kerja' ? 'active' : '' }}">
+                        <a href="/timkerja" class="nav-link {{ Request::is('timkerja*') ? 'active' : '' }}">
                             <i class="far fa-circle nav-icon"></i>
                             <p>Tim Kerja</p>
                         </a>
                     </li>
                 </ul>
             </li>
-            {{-- @can('admin') --}}
+            @can('admin')
                 <li class="nav-header">Pengaturan</li>
                 <li class="nav-item">
-                    <a href="/user" class="nav-link" {{ $title === 'User' ? 'active' : '' }}>
+                    <a href="/user" class="nav-link" {{ Request::is('user*') ? 'active' : '' }}>
                         <i class="nav-icon fas fa-users"></i>
                         <p>
                             Pengguna
@@ -227,7 +227,7 @@
                         </p>
                     </a>
                 </li> --}}
-            {{-- @endcan --}}
+            @endcan
 
         </ul>
     </nav>

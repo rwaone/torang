@@ -12,24 +12,67 @@
         .dataTables_info {
             display: none;
         }
-
     </style>
 @endsection
 
 @section('container')
     <div class="row">
         <div class="col-12">
+            <div class="card">
+                <!-- form start -->
+                <form class="form-horizontal">
+                    <div class="card-body">
+
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label" for="tahun">Tahun:</label>
+                            <select id="tahunSelect" class="form-control col-sm-10 select2bs4" name="tahun" required>
+                                <option value="" disabled selected>Pilih Tahun</option>
+                                <option value='2023'>2023</option>
+                                <option value='2022'>2022</option>
+                            </select>
+                            <div class="help-block"></div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label" for="satker_id">Satuan Kerja:</label>
+                            <select id="satkerSelect" class="form-control col-sm-10 select2bs4" name="satker_id" required>
+                                <option value="" disabled selected>Pilih Satker</option>
+                                @foreach ($satkers as $satker)
+                                    <option value="{{ $satker->id }}">{{ $satker->nama }}</option>
+                                @endforeach
+                            </select>
+                            <div class="help-block"></div>
+                        </div>
+
+                        @can('admin')
+                            <div>
+                                <a href="/timkerja/create" class="btn btn-success float-right">
+                                    <small><i class="fas fa-plus nav-icon"></i></small>
+                                    Tambah
+                                </a>
+                            </div>
+                        @endcan
+                        <!-- /.card-body -->
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="col-12">
             <!-- Default box -->
             <div class="card">
-
+                @can('admin')
+                    <div class="card-header">
+                        <div class="card-tools">
+                            <a href="/pegawai/create" class="btn btn-success">
+                                <small><i class="fas fa-plus nav-icon"></i></small>
+                                Tambah
+                            </a>
+                        </div>
+                    </div>
+                @endcan
                 <!-- /.card-header -->
                 <div class="card-body table-reponsive">
-                    <div class="float-right">
-                        <a href="/pegawai/create" class="btn btn-success">
-                            <small><i class="fas fa-plus nav-icon"></i></small>
-                            Tambah
-                        </a>
-                    </div>
+
                     <table id="tabelpegawai" class="table table-striped table-hover text-sm projects">
                         <thead>
                             <tr>
@@ -220,7 +263,9 @@
                             );
                             var title = $(cell).text();
                             if (title != '') {
-                                $(cell).html('<input style="font-size:12px" type="text" class="form-control">');
+                                $(cell).html(
+                                    '<input style="font-size:12px" type="text" class="form-control">'
+                                );
                             }
                             // On every keypress in this input
                             $(
