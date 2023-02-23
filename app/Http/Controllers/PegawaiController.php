@@ -41,13 +41,22 @@ class PegawaiController extends Controller
      */
     public function create()
     {
+        if (auth()->user()->role == 'Admin Provinsi') {
+            $satker = Satker::all();
+            $jabatan = Jabatan::all();
+            $struktural = collect(Pegawai::all())->where('jabatan_id','<',3);
+        }else {
+            $satker = Satker::where('id',auth()->user()->pegawai->satker_id)->get();
+            $jabatan = Jabatan::where('id', '>', 2)->get();
+            $struktural = collect(Pegawai::all())->where('jabatan_id','<',3);
+        }
         return view('pages.pegawai.create',[
             "title" => "Tambah Pegawai",
             "menu" => "SDM",
-            "jabatans" => Jabatan::all(),
-            "satkers" => Satker::all(),
+            "jabatans" => $jabatan,
+            "satkers" => $satker,
             "golongans" => Golongan::all(),
-            "strukturals" => collect(Pegawai::all())->where('jabatan_id','<',3)
+            "strukturals" => $struktural,
         ]);
     }
 
