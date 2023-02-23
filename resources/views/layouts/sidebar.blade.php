@@ -212,7 +212,7 @@
             @can('admin')
                 <li class="nav-header">Pengaturan</li>
                 <li class="nav-item">
-                    <a href="/user" class="nav-link" {{ Request::is('user*') ? 'active' : '' }}>
+                    <a href="/user" class="nav-link {{ Request::is('user*') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-users"></i>
                         <p>
                             Pengguna
