@@ -38,11 +38,16 @@ class TimkerjaController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
+    { 
+        if (auth()->user()->role == 'Admin Provinsi') {
+            $satker = Satker::all();
+        }else {
+            $satker = Satker::where('id',auth()->user()->pegawai->satker_id)->get();
+        }
         return view('pages.timkerja.create', [
             "title" => "Tambah Tim Kerja",
             "menu" => "SDM",
-            "satkers" => Satker::all(),
+            "satkers" => $satker,
             "pegawais" => collect(Pegawai::all())
         ]);
     }
