@@ -79,7 +79,7 @@ class KegiatanController extends Controller
                 'nama' => 'min:6|required',
                 'kriteria' => 'required',
                 'butir_id' => 'required',
-                'penilai_id' => 'required',
+                'timkerja_id' => 'required',
                 'lokasi' => 'required|min:3',
                 'target' => 'required|min:1',
                 'satuan_id' => 'required',
