@@ -91,7 +91,7 @@
                                                 data-realisasi="{{ $kegiatan->realisasi }}"
                                                 data-keterangan="{{ $kegiatan->keterangan }}"
                                                 data-nilai="{{ $kegiatan->nilai }}"
-                                                data-timkerja="@if (!empty($kegiatan->timkerja_id)) {{ $kegiatan->timkerja->nama }} @endif"
+                                                data-timkerja="{{ $kegiatan->timkerja ? $kegiatan->timkerja->nama : 'Atasan Langsung' }}"
                                                 data-flag="{{ $kegiatan->flag }}">
                                                 <button type="button" class="btn btn-sm btn-primary">
                                                     <i class="fas fa-eye"></i>
