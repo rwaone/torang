@@ -12,7 +12,7 @@ class Kegiatan extends Model
 
     protected $guarded = ['id'];
 
-    protected $with = ['satuan', 'pegawai', 'penilai', 'butir'];
+    protected $with = ['satuan', 'pegawai', 'penilai', 'butir', 'timkerja'];
 
     public function satuan()
     {

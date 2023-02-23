@@ -11,6 +11,7 @@ class Timkerja extends Model
     use HasFactory;
 
     protected $guarded = ['id'];
+    protected $load = ['kegiatan'];
     protected $with = ['ketua','pegawai','satker'];
 
     public function pegawai()
