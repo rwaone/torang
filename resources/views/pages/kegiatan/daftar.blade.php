@@ -57,7 +57,7 @@
                                     <td class="text-center">{{ $kegiatan->satuan->nama }}</td>
                                     <td class="text-center">{{ $kegiatan->realisasi }}</td>
                                     <td class="text-center">{{ $kegiatan->nilai }}</td>
-                                    <td class="text-center">{{ isset($kegiatan->timkerja_id) ? $kegiatan->timkerja->nama : 'Atasan Langsung'}}</td>
+                                    <td class="text-center">{{ is_null($kegiatan->timkerja_id) ? 'Atasan Langsung' : $kegiatan->timkerja->nama }}</td>
                                     <td class="text-center">
                                         @switch($kegiatan->flag)
                                             @case(0)
