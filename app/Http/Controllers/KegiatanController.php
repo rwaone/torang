@@ -192,11 +192,18 @@ class KegiatanController extends Controller
      */
     public function penilaian()
     {
-        return view('pages.kegiatan.penilaian', [
-            "title" => "Penilaian Kegiatan",
-            "menu" => "Kegiatan",
-            "kegiatans" => Kegiatan::getDaftarPenilaian(),
-        ]);
+        if(auth()->user()->pegawai->jabatan < 5){
+            return view('pages.kegiatan.penilaian_pegawai',[
+                'title' => 'Penilaian Kegiatan Pegawai',
+                'pegawais' => Pegawai::where('atasan_id',auth()->user()->pegawai->id),
+            ]);
+        }else{
+            return view('pages.kegiatan.penilaian', [
+                "title" => "Penilaian Kegiatan",
+                "kegiatans" => Kegiatan::getDaftarPenilaian(),
+            ]);
+
+        }
     }
 
     /**

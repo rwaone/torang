@@ -106,9 +106,7 @@
                                 <th class="text-center">Target</th>
                                 <th class="text-center">Satuan</th>
                                 <th class="text-center">Realisasi</th>
-                                <th class="text-center" style="width: 8%">Nilai</th>
                                 <th class="text-center">Tim</th>
-                                <th class="text-center">Status</th>
                                 <th class="text-center" style="width: 40px"></th>
                             </tr>
                         </thead>
@@ -123,31 +121,7 @@
                                         <td class="text-center">{{ $kegiatan->target }}</td>
                                         <td class="text-center">{{ $kegiatan->satuan->nama }}</td>
                                         <td class="text-center">{{ $kegiatan->realisasi }}</td>
-                                        <td class="text-center">{{ $kegiatan->nilai }}</td>
-                                        <td class="text-center">
-                                            @if (!empty($kegiatan->timkerja_id))
-                                                {{ $kegiatan->timkerja->nama }}
-                                            @endif
-                                        </td>
-                                        <td class="text-center">
-                                            @switch($kegiatan->flag)
-                                                @case(0)
-                                                    <span class="badge bg-danger">Belum Dinilai</span>
-                                                @break
-
-                                                @case(1)
-                                                    <span class="badge bg-warning">Penugasan</span>
-                                                @break
-
-                                                @case(2)
-                                                    <span class="badge bg-warning">Konfirmasi</span>
-                                                @break
-
-                                                @case(3)
-                                                    <span class="badge bg-success">Sudah Dinilai</span>
-                                                @break
-                                            @endswitch
-                                        </td>
+                                        <td class="text-center">{{ $kegiatan->timkerja ? $kegiatan->timkerja->nama : 'Atasan Langsung'}}</td>
                                         <td class="project-actions text-right">
                                             <div class="btn-group">
                                                 <a id="view-detail" href="#" data-toggle="modal" data-target="#modal-detail"
@@ -161,7 +135,7 @@
                                                     data-realisasi="{{ $kegiatan->realisasi }}"
                                                     data-keterangan="{{ $kegiatan->keterangan }}"
                                                     data-nilai="{{ $kegiatan->nilai }}"
-                                                    data-timkerja="@if (!empty($kegiatan->timkerja_id)) {{ $kegiatan->timkerja->nama }} @endif"
+                                                    data-timkerja="{{ $kegiatan->timkerja ? $kegiatan->timkerja->nama : 'Atasan Langsung'}}"
                                                     data-flag="{{ $kegiatan->flag }}">
                                                     <button type="button" class="btn btn-sm btn-primary">
                                                         <i class="fas fa-eye"></i>
