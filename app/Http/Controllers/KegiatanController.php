@@ -192,7 +192,7 @@ class KegiatanController extends Controller
      */
     public function penilaian()
     {
-        if(auth()->user()->pegawai->jabatan < 5){
+        if(auth()->user()->pegawai->jabatan_id < 5){
             return view('pages.kegiatan.penilaian_pegawai',[
                 'title' => 'Penilaian Kegiatan Pegawai',
                 'pegawais' => Pegawai::where('atasan_id',auth()->user()->pegawai->id),
