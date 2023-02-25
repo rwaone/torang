@@ -49,11 +49,7 @@
                                         <td class="text-center">{{ $kegiatan->satuan->nama }}</td>
                                         <td class="text-center">{{ $kegiatan->realisasi }}</td>
                                         <td class="text-center">{{ $kegiatan->nilai }}</td>
-                                        <td class="text-center">
-                                            @if (!empty($kegiatan->timkerja_id))
-                                                {{ $kegiatan->timkerja->nama }}
-                                            @endif
-                                        </td>
+                                        <td class="text-center">{{ $kegiatan->timkerja ? $kegiatan->timkerja->nama : 'Atasan Langsung' }}</td>
                                         <td class="text-center">
                                             @switch($kegiatan->flag)
                                                 @case(0)
@@ -86,7 +82,7 @@
                                                     data-realisasi="{{ $kegiatan->realisasi }}"
                                                     data-keterangan="{{ $kegiatan->keterangan }}"
                                                     data-nilai="{{ $kegiatan->nilai }}"
-                                                    data-timkerja="@if (!empty($kegiatan->timkerja_id)) {{ $kegiatan->timkerja->nama }} @endif"
+                                                    data-timkerja="{{ $kegiatan->timkerja ? $kegiatan->timkerja->nama : 'Atasan Langsung' }}"
                                                     data-flag="{{ $kegiatan->flag }}">
                                                     <button type="button" class="btn btn-sm btn-primary">
                                                         <i class="fas fa-eye"></i>

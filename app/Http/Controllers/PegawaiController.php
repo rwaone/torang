@@ -22,15 +22,16 @@ class PegawaiController extends Controller
     {
         if (auth()->user()->role == 'Admin Provinsi') {
             $satker = Satker::all();
+            $pegawai = Pegawai::all();
         }else {
             $satker = Satker::where('id',auth()->user()->pegawai->satker_id)->get();
+            $pegawai = Pegawai::where('satker_id',auth()->user()->pegawai->satker_id)->get();
         }
-        $satker_id = auth()->user()->pegawai->satker_id;
         return view('pages.pegawai.daftar',[
             "title" => "Daftar Pegawai",
             "menu" => "SDM",
             "satkers" => $satker,
-            "pegawais" => Pegawai::where('satker_id',$satker_id)->get()
+            "pegawais" => $pegawai
         ]);
     }
 
