@@ -42,6 +42,7 @@ class PegawaiController extends Controller
      */
     public function create()
     {
+        $this->authorize('admin');
         if (auth()->user()->role == 'Admin Provinsi') {
             $satker = Satker::all();
             $jabatan = Jabatan::all();
@@ -69,6 +70,7 @@ class PegawaiController extends Controller
      */
     public function store(StorePegawaiRequest $request)
     {
+        $this->authorize('admin');
         $validatedData = $request->validate([
             'nama' => 'max:255',
             'gelar_depan' => 'max:50',
@@ -116,6 +118,7 @@ class PegawaiController extends Controller
      */
     public function edit(Pegawai $pegawai)
     {
+        $this->authorize('admin');
         if (auth()->user()->role == 'Admin Provinsi') {
             $satker = Satker::all();
         }else {
@@ -141,6 +144,7 @@ class PegawaiController extends Controller
      */
     public function update(UpdatePegawaiRequest $request, Pegawai $pegawai)
     {
+        $this->authorize('admin');
         $rules = [
             'nama' => 'max:255',
             'gelar_depan' => 'max:50',
@@ -174,6 +178,7 @@ class PegawaiController extends Controller
      */
     public function destroy(Pegawai $pegawai)
     {
+        $this->authorize('admin');
         Pegawai::destroy($pegawai->id);
         return redirect('pegawai')->with('notif','Data berhasil dihapus!');
     }

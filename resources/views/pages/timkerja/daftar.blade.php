@@ -112,17 +112,17 @@
                                             View
                                         </a>
                                         @can('admin')
-                                            <a class="btn btn-info btn-sm" href="/timkerja/{{ $timkerja->id }}/edit">
-                                                <i class="fas fa-pencil-alt">
-                                                </i>
-                                                Edit
-                                            </a>
-                                            <a onclick="deleteConfirm('/timkerja/{{ $timkerja->id }}')"
-                                                class="btn btn-danger btn-sm" href="#">
-                                                <i class="fas fa-trash">
-                                                </i>
-                                                Delete
-                                            </a>
+                                        <a class="btn btn-info btn-sm" href="/timkerja/{{ $timkerja->id }}/edit">
+                                            <i class="fas fa-pencil-alt">
+                                            </i>
+                                            Edit
+                                        </a>
+                                        <a onclick="deleteConfirm('/timkerja/{{ $timkerja->id }}')"
+                                            class="btn btn-danger btn-sm" href="#">
+                                            <i class="fas fa-trash">
+                                            </i>
+                                            Delete
+                                        </a>                                            
                                         @endcan
                                     </td>
                                 </tr>
@@ -181,14 +181,42 @@
         <script src="{{ asset('template/plugins/datatables-buttons/js/buttons.bootstrap4.min.js') }}"></script>
         <script src="{{ asset('template/plugins/jszip/jszip.min.js') }}"></script>
         <script src="{{ asset('template/plugins/pdfmake/pdfmake.min.js') }}"></script>
+        <script src="{{ asset('template/plugins/pdfmake/vfs_fonts.js') }}"></script>
+        <script src="{{ asset('template/plugins/datatables-buttons/js/buttons.html5.min.js') }}"></script>
+        <script src="{{ asset('template/plugins/datatables-buttons/js/buttons.print.min.js') }}"></script>
+        <script src="{{ asset('template/plugins/datatables-buttons/js/buttons.colVis.min.js') }}"></script>
         <script>
-            function deleteConfirm(url) {
-                $('#btn-delete').attr('action', url);
-                $('#deleteModal').modal();
-            }
+            $(function() {
+                $("#tabeltimkerja").DataTable({
+                    "ordering": false,
+                    "responsive": true,
+                    "lengthChange": false,
+                    "autoWidth": false,
+                    "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+                }).buttons().container().appendTo('#tabel_wrapper .col-md-6:eq(0)');
+
+            });
+            $(function() {
+                const Toast = Swal.mixin({
+                    toast: true,
+                    position: 'top-end',
+                    showConfirmButton: false,
+                    timer: 3000
+                });
+
+                var notif = "{{ Session::get('notif') }}";
+
+                if (notif != '') {
+                    Toast.fire({
+                        icon: 'success',
+                        title: notif
+                    })
+                } else if (notif == '2') {
+                    Toast.fire({
+                        icon: 'success',
+                        title: 'Data telah berhasil dihapus.'
+                    })
+                }
+            });
         </script>
-        <script src="{{ asset('template/plugins/sweetalert2/sweetalert2.min.js') }}"></script>
-        <script src="{{ asset('template/plugins/datatables/jquery.dataTables.min.js') }}"></script>
-        <script src="{{ asset('template/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js') }}"></script>
-        <script src="{{ asset('template/plugins/datatables-responsive/js/dataTables.responsive.min.js') }}"></script>
     @endsection
