@@ -113,6 +113,7 @@
                                             <i class="fas fa-eye">
                                             </i>
                                         </a>
+                                        @can('admin')
                                         <a class="btn btn-info btn-sm" href="/pegawai/{{ $pegawai->nip_lama }}/edit">
                                             <i class="fas fa-pencil-alt">
                                             </i>
@@ -122,6 +123,8 @@
                                             <i class="fas fa-trash">
                                             </i>
                                         </a>
+                                            
+                                        @endcan
                                     </td>
                                     {{-- <td>{{ $pegawai->atasan->nama }}</td> --}}
                                 </tr>
