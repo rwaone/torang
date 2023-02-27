@@ -1,13 +1,13 @@
 <div class="sidebar">
     <!-- Sidebar user (optional) -->
     <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-        <a href="{{url('/profile')}}">
+        <a href="{{ url('/profile') }}">
             <div class="image">
                 <img src="{{ asset('storage/' . auth()->user()->pegawai->foto) }}" class="img-circle elevation-2"
                     alt="User Image">
             </div>
             <div class="info text-truncate">
-                <a href="{{url('/profile')}}" class="d-block">{{ auth()->user()->pegawai->nama }}</a>
+                <a href="{{ url('/profile') }}" class="d-block">{{ auth()->user()->pegawai->nama }}</a>
             </div>
         </a>
     </div>
@@ -51,7 +51,8 @@
                         </a>
                     </li> --}}
                     <li class="nav-item">
-                        <a href="/kegiatan" class="nav-link {{ Request::is('kegiatan', 'kegiatan/create', 'kegiatan/{kegiatan}', 'kegiatan/{kegiatan}/edit')  ? 'active' : '' }}">
+                        <a href="/kegiatan"
+                            class="nav-link {{ Request::is('kegiatan', 'kegiatan/create', 'kegiatan/{kegiatan}', 'kegiatan/{kegiatan}/edit') ? 'active' : '' }}">
                             <i class="far fa-circle nav-icon"></i>
                             <p>Daftar Kegiatan</p>
                         </a>
@@ -111,7 +112,7 @@
                         </li>
                     @endcan
                 </ul>
-            {{-- </li>
+                {{-- </li>
             <li class="nav-item {{ $menu === 'SKP' ? 'menu-open' : '' }}">
                 <a href="#" class="nav-link {{ $menu === 'SKP' ? 'active' : '' }}">
                     <i class="nav-icon fas fa-book"></i>
@@ -148,45 +149,46 @@
                 </ul>
             </li> --}}
             @can('admin')
-            <li class="nav-item {{ Request::is('rekap*') ? 'menu-open' : '' }}">
-                <a href="#" class="nav-link {{ Request::is('rekap*') ? 'active' : '' }}">
-                    <i class="nav-icon fas fa-chart-pie"></i>
-                    <p>
-                        Rekapitulasi
-                        <i class="fas fa-angle-left right"></i>
-                    </p>
-                </a>
-                <ul class="nav nav-treeview">
-                    <li class="nav-item">
-                        <a href="{{url('/rekap/kegiatan/')}}"
-                            class="nav-link {{ Request::is('rekap/kegiatan') ? 'active' : '' }}">
-                            <i class="far fa-circle nav-icon"></i>
-                            <p>Kegiatan Pegawai</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{{url('/rekap/harian/')}}"
-                            class="nav-link {{ Request::is('rekap/harian') ? 'active' : '' }}">
-                            <i class="far fa-circle nav-icon"></i>
-                            <p>Kegiatan Harian</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{{url('/rekap/ckp/')}}"
-                            class="nav-link {{ Request::is('rekap/ckp') ? 'active' : '' }}">
-                            <i class="far fa-circle nav-icon"></i>
-                            <p>CKP</p>
-                        </a>
-                    </li>
-                    {{-- <li class="nav-item">
+                <li class="nav-item {{ Request::is('rekap*') ? 'menu-open' : '' }}">
+                    <a href="#" class="nav-link {{ Request::is('rekap*') ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-chart-pie"></i>
+                        <p>
+                            Rekapitulasi
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{ url('/rekap/kegiatan/') }}"
+                                class="nav-link {{ Request::is('rekap/kegiatan') ? 'active' : '' }}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Kegiatan Pegawai</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ url('/rekap/harian/') }}"
+                                class="nav-link {{ Request::is('rekap/harian') ? 'active' : '' }}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Kegiatan Harian</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ url('/rekap/ckp/') }}"
+                                class="nav-link {{ Request::is('rekap/ckp') ? 'active' : '' }}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>CKP</p>
+                            </a>
+                        </li>
+                        {{-- <li class="nav-item">
                         <a href="{{url('/rekap/skp/')}}"
                             class="nav-link {{ $title === 'SKP' ? 'active' : '' }}">
                             <i class="far fa-circle nav-icon"></i>
                             <p>SKP</p>
                         </a>
                     </li> --}}
-                </ul>
-            </li>
+                    </ul>
+                </li>
+            @endcan
             <li class="nav-item {{ Request::is('pegawai*', 'timkerja*') ? 'menu-open' : '' }}">
                 <a href="#" class="nav-link {{ Request::is('pegawai*', 'timkerja*') ? 'active' : '' }}">
                     <i class="nav-icon fas fa-user-tie"></i>
@@ -210,7 +212,6 @@
                     </li>
                 </ul>
             </li>
-            @endcan
             @can('admin')
                 <li class="nav-header">Pengaturan</li>
                 <li class="nav-item">
