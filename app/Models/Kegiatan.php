@@ -11,8 +11,6 @@ class Kegiatan extends Model
     use HasFactory;
 
     protected $guarded = ['id'];
-    
-    protected $timestamps = true;
 
     protected $with = ['satuan', 'pegawai', 'penilai', 'butir', 'timkerja'];
 
