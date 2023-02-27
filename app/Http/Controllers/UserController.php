@@ -17,11 +17,14 @@ class UserController extends Controller
      */
     public function index()
     {
-        $all_user = User::all();
-        $satker_id = auth()->user()->pegawai->satker_id;
-        $daftar_user = User::whereHas('pegawai' , function($query) use($satker_id){
-            $query->where('satker_id', '=', $satker_id);
-        })->get();
+        if(auth()->user()->role == 'Super Admin'){
+            $satker_id = auth()->user()->pegawai->satker_id;
+            $daftar_user = User::whereHas('pegawai' , function($query) use($satker_id){
+                $query->where('satker_id', '=', $satker_id);
+            })->get();
+        }else {
+            $daftar_user = User::all();
+        }
         return view('pages.user.daftar',[
             "title" => "User",
             "menu" => "User",
