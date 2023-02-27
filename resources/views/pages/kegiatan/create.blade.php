@@ -81,8 +81,8 @@
                                 <option value="" selected disabled>Pilih Pemberi Tugas</option>
                                 <option {{ old('timkerja_id') == 0 ? 'selected' : '' }} value="0">Atasan Langsung</option>
                                 @foreach ($timkerjas as $timkerja)
-                                    <option {{ old('timkerja_id') == $timkerja->ketua_id ? 'selected' : '' }}
-                                        value="{{ $timkerja->ketua_id }}">{{ $timkerja->nama }}</option>
+                                    <option {{ old('timkerja_id') == $timkerja->id ? 'selected' : '' }}
+                                        value="{{ $timkerja->id }}">{{ $timkerja->nama }}</option>
                                 @endforeach
                             </select>
                             <div class="help-block"></div>
