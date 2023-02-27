@@ -52,17 +52,17 @@ Route::get('ckp/approve/{bulan}/{pegawai_id}', [CkpController::class, 'approve']
 
 Route::resource('skp', IkiController::class)->middleware(['auth', 'verified']);
 
-Route::get('rekap/kegiatan/', [RekapController::class, 'rekapKegiatan'])->middleware(['auth', 'verified']);
-Route::post('rekap/kegiatan/', [RekapController::class, 'rekapKegiatan'])->middleware(['auth', 'verified']);
-Route::get('rekap/harian/', [RekapController::class, 'rekapKegiatanHarian'])->middleware(['auth', 'verified']);
-Route::get('rekap/ckp/', [RekapController::class, 'rekapCKP'])->middleware(['auth', 'verified']);
-Route::get('rekap/ckp/{bulan}', [RekapController::class, 'rekapCKP'])->middleware(['auth', 'verified']);
+Route::get('rekap/kegiatan/', [RekapController::class, 'rekapKegiatan'])->middleware(['auth', 'verified','admin']);
+Route::post('rekap/kegiatan/', [RekapController::class, 'rekapKegiatan'])->middleware(['auth', 'verified','admin']);
+Route::get('rekap/harian/', [RekapController::class, 'rekapKegiatanHarian'])->middleware(['auth', 'verified','admin']);
+Route::get('rekap/ckp/', [RekapController::class, 'rekapCKP'])->middleware(['auth', 'verified','admin']);
+Route::get('rekap/ckp/{bulan}', [RekapController::class, 'rekapCKP'])->middleware(['auth', 'verified','admin']);
 
 Route::resource('pegawai', PegawaiController::class)->middleware(['auth', 'verified']);
 
 Route::resource('timkerja', TimkerjaController::class)->middleware(['auth', 'verified']);
 
-Route::resource('user', UserController::class)->middleware(['auth', 'verified'])->middleware('admin');
+Route::resource('user', UserController::class)->middleware(['auth', 'verified','admin']);
 Route::get('/profile', [UserController::class, 'profile'])->middleware(['auth', 'verified'])->name('profile');
 Route::post('updatePassword', [UserController::class, 'update_password'])->middleware(['auth', 'verified']);
 

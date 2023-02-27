@@ -111,6 +111,7 @@
                                             </i>
                                             View
                                         </a>
+                                        @can('admin')
                                         <a class="btn btn-info btn-sm" href="/timkerja/{{ $timkerja->id }}/edit">
                                             <i class="fas fa-pencil-alt">
                                             </i>
@@ -121,7 +122,8 @@
                                             <i class="fas fa-trash">
                                             </i>
                                             Delete
-                                        </a>
+                                        </a>                                            
+                                        @endcan
                                     </td>
                                 </tr>
                             @endforeach

@@ -39,6 +39,7 @@ class TimkerjaController extends Controller
      */
     public function create()
     { 
+        $this->authorize('admin');
         if (auth()->user()->role == 'Admin Provinsi') {
             $satker = Satker::all();
         }else {
@@ -60,6 +61,7 @@ class TimkerjaController extends Controller
      */
     public function store(StoreTimkerjaRequest $request)
     {
+        $this->authorize('admin');
         $validatedData = $request->validate([
             'nama' => 'max:255|required',
             'satker_id' => 'required',
@@ -129,6 +131,7 @@ class TimkerjaController extends Controller
      */
     public function destroy(Timkerja $timkerja)
     {
+        $this->authorize('admin');
         Timkerja::where('id',$timkerja->id)->delete();
         Anggota::where('timkerja_id', $timkerja->id)->delete();
         return redirect('/timkerja')->with('notif','Data berhasil dihapus!');
