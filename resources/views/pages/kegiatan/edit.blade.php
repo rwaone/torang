@@ -90,8 +90,8 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="control-label" for="penilai_id">Pemberi Tugas</label>
-                            <select id="penilai_id" class="form-control select2bs4" name="penilai_id" required>
+                            <label class="control-label" for="timkerja_id">Pemberi Tugas</label>
+                            <select id="penilai_id" class="form-control select2bs4" name="timkerja_id" required>
                                 <option value="" selected disabled>Pilih Pemberi Tugas</option>
                                 @foreach ($timkerjas as $timkerja)
                                     <option {{ old('timkerja_id', $kegiatan->timkerja_id) == $timkerja->id ? 'selected' : '' }}
