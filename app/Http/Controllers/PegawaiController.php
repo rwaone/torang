@@ -46,11 +46,11 @@ class PegawaiController extends Controller
         if (auth()->user()->role == 'Admin Provinsi') {
             $satker = Satker::all();
             $jabatan = Jabatan::all();
-            $struktural = collect(Pegawai::all())->where('jabatan_id','<',3);
+            $struktural = collect(Pegawai::all())->where('jabatan_id','<',5);
         }else {
             $satker = Satker::where('id',auth()->user()->pegawai->satker_id)->get();
             $jabatan = Jabatan::where('id', '>', 2)->get();
-            $struktural = collect(Pegawai::all())->where('jabatan_id','<',3);
+            $struktural = collect(Pegawai::all())->where('jabatan_id','<',5);
         }
         return view('pages.pegawai.create',[
             "title" => "Tambah Pegawai",
