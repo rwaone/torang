@@ -113,15 +113,17 @@
                                             <i class="fas fa-eye">
                                             </i>
                                         </a>
-                                        <a class="btn btn-info btn-sm" href="/pegawai/{{ $pegawai->nip_lama }}/edit">
-                                            <i class="fas fa-pencil-alt">
-                                            </i>
-                                        </a>
-                                        <a onclick="deleteConfirm('/pegawai/{{ $pegawai->nip_lama }}')"
-                                            class="btn btn-danger btn-sm" href="#">
-                                            <i class="fas fa-trash">
-                                            </i>
-                                        </a>
+                                        @can('admin')
+                                            <a class="btn btn-info btn-sm" href="/pegawai/{{ $pegawai->nip_lama }}/edit">
+                                                <i class="fas fa-pencil-alt">
+                                                </i>
+                                            </a>
+                                            <a onclick="deleteConfirm('/pegawai/{{ $pegawai->nip_lama }}')"
+                                                class="btn btn-danger btn-sm" href="#">
+                                                <i class="fas fa-trash">
+                                                </i>
+                                            </a>
+                                        @endcan
                                     </td>
                                     {{-- <td>{{ $pegawai->atasan->nama }}</td> --}}
                                 </tr>
@@ -182,115 +184,15 @@
     <script src="{{ asset('template/plugins/jszip/jszip.min.js') }}"></script>
     <script src="{{ asset('template/plugins/pdfmake/pdfmake.min.js') }}"></script>
     <script src="{{ asset('template/plugins/pdfmake/vfs_fonts.js') }}"></script>
-    <script src="{{ asset('template/plugins/datatables-buttons/js/buttons.html5.min.js') }}"></script>
-    <script src="{{ asset('template/plugins/datatables-buttons/js/buttons.print.min.js') }}"></script>
-    <script src="{{ asset('template/plugins/datatables-buttons/js/buttons.colVis.min.js') }}"></script>
-    <!-- SweetAlert2 -->
-    <script src="{{ asset('template/plugins/sweetalert2/sweetalert2.min.js') }}"></script>
     <script>
-        $(function() {
-            $("#tabel").DataTable({
-                "responsive": true,
-                "lengthChange": false,
-                "autoWidth": false,
-                "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
-            }).buttons().container().appendTo('#tabel_wrapper .col-md-6:eq(0)');
-
-        });
-
-        $(function() {
-            const Toast = Swal.mixin({
-                toast: true,
-                position: 'top-end',
-                showConfirmButton: false,
-                timer: 3000
-            });
-
-            var notif = "{{ Session::get('notif') }}";
-
-            if (notif != '') {
-                Toast.fire({
-                    icon: 'success',
-                    title: notif
-                })
-            } else if (notif == '2') {
-                Toast.fire({
-                    icon: 'success',
-                    title: 'Data telah berhasil dihapus.'
-                })
-            }
-        });
-
-        $(document).ready(function() {
-            // Setup - add a text input to each footer cell
-            $('#tabelpegawai thead tr')
-                .clone(true)
-                .addClass('filters')
-                .appendTo('#tabelpegawai thead');
-
-            var table = $('#tabelpegawai').DataTable({
-                orderCellsTop: true,
-                fixedHeader: true,
-                paging: true,
-                pageLength: 10,
-                lengthChange: false,
-                ordering: false,
-                info: true,
-                // autoWidth: false,
-                // responsive: false,
-                initComplete: function() {
-                    var api = this.api();
-
-                    // For each column
-                    api
-                        .columns()
-                        .eq(0)
-                        .each(function(colIdx) {
-                            // Set the header cell to contain the input element
-                            var cell = $('.filters th').eq(
-                                $(api.column(colIdx).header()).index()
-                            );
-                            var title = $(cell).text();
-                            if (title != '') {
-                                $(cell).html(
-                                    '<input style="font-size:12px" type="text" class="form-control">'
-                                );
-                            }
-                            // On every keypress in this input
-                            $(
-                                    'input',
-                                    $('.filters th').eq($(api.column(colIdx).header()).index())
-                                )
-                                .off('keyup change')
-                                .on('keyup change', function(e) {
-                                    e.stopPropagation();
-
-                                    // Get the search value
-                                    $(this).attr('title', $(this).val());
-                                    var regexr =
-                                        '({search})'; //$(this).parents('th').find('select').val();
-
-                                    var cursorPosition = this.selectionStart;
-                                    // Search the column for that value
-                                    api
-                                        .column(colIdx)
-                                        .search(
-                                            this.value != '' ?
-                                            regexr.replace('{search}', '(((' + this.value +
-                                                ')))') :
-                                            '',
-                                            this.value != '',
-                                            this.value == ''
-                                        )
-                                        .draw();
-
-                                    $(this)
-                                        .focus()[0]
-                                        .setSelectionRange(cursorPosition, cursorPosition);
-                                });
-                        });
-                },
-            });
-        });
+        function deleteConfirm(url) {
+            $('#btn-delete').attr('action', url);
+            $('#deleteModal').modal();
+        }
     </script>
+    <script src="{{ asset('template/plugins/datatables/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('template/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js') }}"></script>
+    <!-- SweetAlert2 -->
+    <script src="{{ asset('template/plugins/datatables-responsive/js/dataTables.responsive.min.js') }}"></script>
+    <script src="{{ asset('template/plugins/datatables-responsive/js/responsive.bootstrap4.min.js') }}"></script>
 @endsection
