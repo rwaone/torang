@@ -50,10 +50,11 @@ class RekapController extends Controller
 
     public function rekapKegiatanHarian()
     {
+        $kegiatan = Kegiatan::whereDate('tanggal', '=', date('Y-m-d'))->get();
         return view('pages.rekap.rekapHarian', [
             'menu' => 'Rekapitulasi',
             'title' => 'Kegiatan Harian',
-            'kegiatans' => Kegiatan::whereDate('tanggal', '=', date('Y-m-d'))->get()
+            'kegiatans' => $kegiatan
         ]);
     }
 
