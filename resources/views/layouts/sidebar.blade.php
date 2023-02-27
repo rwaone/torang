@@ -147,7 +147,7 @@
                     </li>
                 </ul>
             </li> --}}
-            @can('ketua')
+            @can('admin')
             <li class="nav-item {{ Request::is('rekap*') ? 'menu-open' : '' }}">
                 <a href="#" class="nav-link {{ Request::is('rekap*') ? 'active' : '' }}">
                     <i class="nav-icon fas fa-chart-pie"></i>
