@@ -43,11 +43,6 @@ class Pegawai extends Model
         return $this->hasMany(iki::class);
     }
 
-    public function penilaian()
-    {
-        return $this->hasMany(Kegiatan::class, 'penilai_id');
-    }
-
     public function satker()
     {
         return $this->belongsTo(Satker::class);

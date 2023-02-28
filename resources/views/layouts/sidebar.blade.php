@@ -76,12 +76,23 @@
                                 </p>
                             </a>
                         </li>
-                        <li class="nav-item">
+                        {{-- <li class="nav-item">
                             <a href="/kegiatan/timkerja"
                                 class="nav-link {{ Request::is('kegiatan/timkerja') ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>
                                     Kegiatan Tim Kerja
+                                </p>
+                            </a>
+                        </li> --}}
+                    @endcan
+                    @can('struktural')
+                        <li class="nav-item">
+                            <a href="/kegiatan/pegawai"
+                                class="nav-link {{ Request::is('kegiatan/pegawai*') ? 'active' : '' }}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>
+                                    Penilaian Pegawai
                                 </p>
                             </a>
                         </li>
@@ -148,7 +159,7 @@
                     </li>
                 </ul>
             </li> --}}
-            @can('admin')
+                @can('admin')
                 <li class="nav-item {{ Request::is('rekap*') ? 'menu-open' : '' }}">
                     <a href="#" class="nav-link {{ Request::is('rekap*') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-chart-pie"></i>

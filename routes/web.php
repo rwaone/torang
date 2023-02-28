@@ -30,9 +30,9 @@ Route::get('/', function () {
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 // Route::get('/dashboard2', [DashboardController::class, 'dashboard2'])->middleware(['auth', 'verified'])->name('dashboard2');
 
-
+Route::get('/kegiatan/pegawai', [KegiatanController::class, 'daftarPegawai'])->middleware(['auth', 'verified']);
 Route::get('/kegiatan/timkerja', [KegiatanController::class, 'kegiatanTimkerja'])->middleware(['auth', 'verified']);
-Route::get('/kegiatan/penilaian/pegawai/{nip_lama}', [KegiatanController::class, 'penilaianPegawai'])->middleware(['auth', 'verified']);
+Route::get('/kegiatan/pegawai/{nip_lama}', [KegiatanController::class, 'kegiatanPegawai'])->middleware(['auth', 'verified']);
 Route::get('/kegiatan/penilaian', [KegiatanController::class, 'penilaian'])->middleware(['auth', 'verified']);
 Route::get('/kegiatan/alokasi', [KegiatanController::class, 'alokasi'])->middleware(['auth', 'verified']);
 Route::resource('kegiatan', KegiatanController::class)->middleware(['auth', 'verified']);

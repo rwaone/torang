@@ -12,7 +12,7 @@ class Kegiatan extends Model
 
     protected $guarded = ['id'];
 
-    protected $with = ['satuan', 'pegawai', 'penilai', 'butir', 'timkerja'];
+    protected $with = ['satuan', 'pegawai', 'butir', 'timkerja'];
 
     public function satuan()
     {
@@ -34,18 +34,14 @@ class Kegiatan extends Model
         return $this->belongsTo(Pegawai::class);
     }
 
-    public function penilai()
-    {
-        return $this->belongsTo(Pegawai::class, 'penilai_id');
-    }
-
     public static function getDaftarPenilaian()
-    {   
+    {           
         $penilai = auth()->user()->pegawai_id;
         $timkerja_id = Timkerja::where('ketua_id', $penilai)->pluck('id');
         // $daftar_tim = Timkerja::whereIn('supervisor_id',$timkerja_id)->orWhere('ketua_id', $penilai)->pluck('id');
         $query = Kegiatan::where('flag', NULL)->orWhere('flag', '0')->orWhere('flag', '2')->get();
         $daftarpenilaian = $query->whereIn('timkerja_id', $timkerja_id);
+
         return $daftarpenilaian;
     }
 

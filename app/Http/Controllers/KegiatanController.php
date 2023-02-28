@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Butir;
 use App\Models\Satuan;
 use App\Models\Pegawai;
+use App\Models\Satker;
 use App\Models\Kegiatan;
 use App\Models\Timkerja;
 use Illuminate\Http\Request;
@@ -156,7 +157,7 @@ class KegiatanController extends Controller
             ]);
             $validatedData['flag'] = 2;
             $url = 'kegiatan';
-        }elseif ($request['request'] == 'penilaian') {
+        } elseif ($request['request'] == 'penilaian') {
             $validatedData = $request->validate([
                 'nilai' => 'required',
             ]);
@@ -167,6 +168,15 @@ class KegiatanController extends Controller
                 'nilai' => 'required',
             ]);
             $url = 'kegiatan/penilaian';
+        } elseif ($request['request'] == 'penilaianpegawai') {
+            $validatedData = $request->validate([
+                'nilai' => 'required',
+            ]);
+            $validatedData['flag'] = 3;
+            $url = 'kegiatan/penilaian';
+
+            Kegiatan::where('id', $kegiatan->id)->update($validatedData);
+            return redirect()->back()->with('notif', 'Data berhasil disimpan!');
         }
 
         Kegiatan::where('id', $kegiatan->id)->update($validatedData);
@@ -193,9 +203,9 @@ class KegiatanController extends Controller
     public function penilaian()
     {
         if(auth()->user()->pegawai->jabatan_id < 5){
-            return view('pages.kegiatan.penilaian_pegawai',[
+            return view('pages.kegiatan.penilaian',[
                 'title' => 'Penilaian Kegiatan Pegawai',
-                'pegawais' => Pegawai::where('atasan_id',auth()->user()->pegawai->id),
+                'kegiatans' => Kegiatan::where('atasan_id',auth()->user()->pegawai->id),
             ]);
         }else{
             return view('pages.kegiatan.penilaian', [
@@ -235,6 +245,44 @@ class KegiatanController extends Controller
             "title" => "Kegiatan Tim Kerja",
             "menu" => "Kegiatan",
             "timkerjas" => Timkerja::getMyTimkerja(),
+        ]);
+    }
+
+    /**
+     * Menampilkan daftar anggota tim kerja.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function daftarPegawai()
+    {
+        $this->authorize('struktural');
+        if (auth()->user()->role == 'Admin Provinsi') {
+            $satker = Satker::all();
+            $pegawais = Pegawai::all();
+        }else {
+            $satker = Satker::where('id',auth()->user()->pegawai->satker_id)->get();
+            $pegawais = Pegawai::where('atasan_id', auth()->user()->pegawai->id);
+        }
+        // $anggota_id = Timkerja::getMyAnggotaId();
+        return view('pages.kegiatan.daftarpegawai', [
+            "title" => "Kegiatan Tim Kerja",
+            "menu" => "Kegiatan",
+            "satkers" => $satker,
+            "pegawais" => $pegawais,
+        ]);
+    }
+
+    /**
+     * Menampilkan daftar anggota tim kerja.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function kegiatanPegawai($pegawai_id)
+    {
+        $tahun = session()->get('tahun');
+        return view('pages.kegiatan.penilaian',[
+            'title' => 'Penilaian Kegiatan Pegawai',
+            'kegiatans' => Kegiatan::where('pegawai_id', $pegawai_id)->whereYear('tanggal', '=', $tahun)->orderBy('tanggal', 'desc')->get(),
         ]);
     }
 }
