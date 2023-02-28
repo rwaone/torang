@@ -41,7 +41,7 @@
                                 <th class="text-center">Satuan</th>
                                 <th class="text-center">Realisasi</th>
                                 <th class="text-center" style="width: 8%">Nilai</th>
-                                <th class="text-center">Tim</th>
+                                <th class="text-center">Pemberi Tugas</th>
                                 <th class="text-center">Status</th>
                                 <th class="text-center" style="width: 100px"></th>
                             </tr>
