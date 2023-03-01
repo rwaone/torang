@@ -26,6 +26,7 @@
                         <thead>
                             <tr>
                                 <th class="text-center">Tanggal</th>
+                                <th class="text-center">Pegawai</th>
                                 <th class="text-center">Kegiatan</th>
                                 <th class="text-center">Kriteria</th>
                                 <th class="text-center">Target</th>
@@ -43,6 +44,7 @@
                                     <tr>
                                         <td class="text-center">{{ date('d-m-Y', strtotime($kegiatan->tanggal)) }}
                                         </td>
+                                        <td class="">{{ $kegiatan->pegawai->nama }}</td>
                                         <td class="">{{ $kegiatan->nama }}</td>
                                         <td class="">{{ $kegiatan->kriteria }}</td>
                                         <td class="text-center">{{ $kegiatan->target }}</td>
