@@ -28,8 +28,13 @@ class ckp extends Model
 
     public static function getdaftarckp($satker, $bulan, $tahun)
     {
-
-        $daftarpegawai = Pegawai::whereIn('satker_id', [$satker])->get();
+        
+        if (auth()->user()->role == 'Admin Provinsi') {
+            $daftarpegawai = Pegawai::all();
+        }else {
+            $daftarpegawai = Pegawai::where('penilai_id', auth()->user()->pegawai->id)->get();
+        }
+        //$daftarpegawai = Pegawai::whereIn('satker_id', [$satker])->get();
         $query_kegiatan = DB::table('kegiatans')->selectRaw('pegawai_id, kriteria, kegiatans.nama, satuans.nama AS satuan, SUM(target) as sum_target, SUM(realisasi) AS sum_realisasi, 
         AVG(nilai) AS avg_nilai, SUM(realisasi)*100/SUM(target) AS persentase')
             ->leftJoin('satuans', 'kegiatans.satuan_id', '=', 'satuans.id')

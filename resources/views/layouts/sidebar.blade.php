@@ -114,9 +114,9 @@
                             <p>CKP</p>
                         </a>
                     </li>
-                    @can('struktural')
+                    @can('penilai')
                         <li class="nav-item">
-                            <a href="/ckp/daftarApprove" class="nav-link {{ Request::is('ckp/approve') ? 'active' : '' }}">
+                            <a href="/ckp/daftarApprove" class="nav-link {{ Request::is('ckp/daftarApprove*') ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Approve CKP</p>
                             </a>
@@ -185,7 +185,7 @@
                         </li>
                         <li class="nav-item">
                             <a href="{{ url('/rekap/ckp/') }}"
-                                class="nav-link {{ Request::is('rekap/ckp') ? 'active' : '' }}">
+                                class="nav-link {{ Request::is('rekap/ckp*') ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>CKP</p>
                             </a>
