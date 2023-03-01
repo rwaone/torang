@@ -34,11 +34,13 @@
                             <tr class="text-center">
                                 <th class="">Tanggal</th>
                                 <th class="">Pegawai</th>
-                                <th class="">Tim Kerja</th>
                                 <th class="">Kegiatan</th>
                                 <th class="">Target</th>
                                 <th class="">Satuan</th>
                                 <th class="">Realisasi</th>
+                                <th class="">Tim Kerja</th>
+                                <th class="">Nilai</th>
+                                <th class="">Status</th>
                                 <th class="" style="width: 50px"></th>
                             </tr>
                         </thead>
@@ -47,15 +49,30 @@
                                 <tr>
                                     <td class="">{{ date('d-m-Y', strtotime($kegiatan->tanggal)) }}</td>
                                     <td class="">{{ $kegiatan->pegawai->nama }}</td>
-                                    <td class="">
-                                        @if (!empty($kegiatan->timkerja_id))
-                                            {{ $kegiatan->timkerja->nama }}
-                                        @endif
-                                    </td>
                                     <td class="">{{ $kegiatan->nama }}</td>
                                     <td class="">{{ $kegiatan->target }}</td>
                                     <td class="">{{ $kegiatan->satuan->nama }}</td>
                                     <td class="">{{ $kegiatan->realisasi }}</td>
+                                    <td class="">{{ $kegiatan->timkerja ? $kegiatan->timkerja->nama : 'Atasan Langsung' }}</td>
+                                    <td class="">{{ $kegiatan->nilai }}</td>
+                                    <td class="">
+                                        @switch($kegiatan->flag)
+                                            @case(0)
+                                                <span class="badge bg-danger">Belum Dinilai</span>
+                                            @break
+
+                                            @case(1)
+                                                <span class="badge bg-warning">Penugasan</span>
+                                            @break
+
+                                            @case(2)
+                                                <span class="badge bg-warning">Konfirmasi</span>
+                                            @break
+
+                                            @case(3)
+                                                <span class="badge bg-success">Sudah Dinilai</span>
+                                            @break
+                                        @endswitch</td>
                                     <td class="project-actions text-center">
                                         <a class="btn btn-success" id="penilaian" href="#" data-toggle="modal"
                                             data-target="#modal-penilaian" data-url="/kegiatan/{{ $kegiatan->id }}"
@@ -127,7 +144,7 @@
                         @csrf
                         @method('put')
                         <table class="table table-bordered no-margin">
-                            <input type="hidden" name="request" value="penilaian">
+                            <input type="hidden" name="request" value="penilaianpegawai">
                             <tbody>
                                 <tr>
                                     <th>Tanggal</th>

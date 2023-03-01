@@ -159,11 +159,13 @@ class KegiatanController extends Controller
             ]);
             $validatedData['flag'] = 3;
             $url = 'kegiatan/penilaian';
+
         } elseif ($request['request'] == 'alokasi') {
             $validatedData = $request->validate([
                 'nilai' => 'required',
             ]);
             $url = 'kegiatan/penilaian';
+
         } elseif ($request['request'] == 'penilaianpegawai') {
             $validatedData = $request->validate([
                 'nilai' => 'required',
@@ -275,7 +277,7 @@ class KegiatanController extends Controller
     public function kegiatanPegawai($pegawai_id)
     {
         $tahun = session()->get('tahun');
-        return view('pages.kegiatan.penilaian',[
+        return view('pages.kegiatan.penilaian_pegawai',[
             'title' => 'Penilaian Kegiatan Pegawai',
             'kegiatans' => Kegiatan::where('pegawai_id', $pegawai_id)->whereYear('tanggal', '=', $tahun)->orderBy('tanggal', 'desc')->get(),
         ]);
