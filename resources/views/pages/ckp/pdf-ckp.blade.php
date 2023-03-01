@@ -43,7 +43,7 @@
             </tr>
             <tr>
                 <th colspan=8 align="left" class="no-border">Satuan Organisasi</th>
-                <th colspan=11 align="left" class="no-border">: {{ $pegawai->satker->lengkap }}</th>
+                <th colspan=11 align="left" class="no-border">: {{ $pegawai->satker->nama }}</th>
             </tr>
             <tr>
                 <th colspan=8 align="left" class="no-border">Nama</th>
