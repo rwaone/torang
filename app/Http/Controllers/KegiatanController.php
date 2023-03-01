@@ -262,7 +262,7 @@ class KegiatanController extends Controller
         }
         // $anggota_id = Timkerja::getMyAnggotaId();
         return view('pages.kegiatan.daftarpegawai', [
-            "title" => "Kegiatan Tim Kerja",
+            "title" => "Kegiatan Pegawai",
             "menu" => "Kegiatan",
             "satkers" => $satker,
             "pegawais" => $pegawais,
