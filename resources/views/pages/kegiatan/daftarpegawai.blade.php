@@ -17,7 +17,7 @@
 
 @section('container')
     <div class="row">
-        <div class="col-12">
+        {{-- <div class="col-12">
             <div class="card">
                 <!-- form start -->
                 <form class="form-horizontal">
@@ -47,7 +47,7 @@
                     </div>
                 </form>
             </div>
-        </div>
+        </div> --}}
         <div class="col-12">
             <!-- Default box -->
             <div class="card">
