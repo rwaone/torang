@@ -95,8 +95,8 @@
                             <label class="control-label" for="role">Role:</label>
                             <select id="role" class="form-control select2bs4" name="role" required>
                                 <option value="" disabled selected>Pilih Role</option>
-                                <option {{ old('role') == "Super Admin" ? 'selected' : '' }} value="Super Admin">Admin Provinsi</option>
-                                <option {{ old('role') == "Admin" ? 'selected' : '' }} value="Admin">Admin Satker</option>
+                                <option {{ old('role') == "Admin Provinsi" ? 'selected' : '' }} value="Super Admin">Admin Provinsi</option>
+                                <option {{ old('role') == "Admin Satker" ? 'selected' : '' }} value="Admin">Admin Satker</option>
                                 <option {{ old('role') == "SDM" ? 'selected' : '' }} value="SDM">SDM</option>
                                 <option {{ old('role') == "Pengguna" ? 'selected' : '' }} value="Pengguna">Pengguna</option>
                             </select>
