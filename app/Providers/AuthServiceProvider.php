@@ -28,6 +28,12 @@ class AuthServiceProvider extends ServiceProvider
             };
         });
 
+        Gate::define('penilai', function(User $user){
+            if ($user->role == 'Penilai' || $user->role == 'Admin Provinsi' || $user->role == 'Admin Satker'){
+                return $user;
+            };
+        });
+
         Gate::define('ketua', function(User $user){
             if (session('ketua_tim') == 1 || $user->role == 'Admin Provinsi' || $user->role == 'Admin Satker'){
                 return $user;

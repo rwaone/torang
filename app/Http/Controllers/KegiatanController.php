@@ -37,12 +37,7 @@ class KegiatanController extends Controller
      */
     public function create()
     {
-        $jabatan_kode = auth()->user()->pegawai->jabatan->kode;
-        if ($jabatan_kode == 'pelaksana'){
             $butir = Butir::all();
-        }else {
-            $butir = Butir::where('jabatan_kode', $jabatan_kode)->get();
-        }
         return view('pages.kegiatan.create', [
             "title" => "Tambah Kegiatan",
             "menu" => "Kegiatan",
@@ -116,12 +111,7 @@ class KegiatanController extends Controller
      */
     public function edit(Kegiatan $kegiatan)
     {
-        $jabatan_kode = auth()->user()->pegawai->jabatan->kode;
-        if ($jabatan_kode == 'pelaksana'){
             $butir = Butir::all();
-        }else {
-            $butir = Butir::where('jabatan_kode', $jabatan_kode)->get();
-        }
         return view('pages.kegiatan.edit', [
             "title" => "Edit Kegiatan",
             "menu" => "Kegiatan",
