@@ -86,7 +86,7 @@
                             </a>
                         </li> --}}
                     @endcan
-                    @can('struktural')
+                    @can('penilai')
                         <li class="nav-item">
                             <a href="/kegiatan/pegawai"
                                 class="nav-link {{ Request::is('kegiatan/pegawai*') ? 'active' : '' }}">
