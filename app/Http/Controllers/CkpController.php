@@ -123,7 +123,7 @@ class CkpController extends Controller
 
         $daftarckp = Ckp::getdaftarckp($satker, $bulan, $tahun);
 
-        return view('pages.ckp.daftarapprove', [
+        return view('pages.ckp.approve', [
             "title" => "Approve CKP",
             "menu" => "CKP",
             "bulan" => $bulan,
