@@ -184,20 +184,6 @@
             document.querySelector('.select2-search__field').focus();
         });
         
-        // $(document).on('select2:open', function(e){
-        //     document.querySelector(`[aria-controls="select2-${e.target.id}-results"]`).focus()''
-        // });
-
-        // $(document).on('focus', '.select2-selection.select2-selection--single' function(e){
-        //     $(this).closest(".select2-container").siblings('select:enabled').select2('open');
-        // });
-
-        // $(".form-control.select-search").on('select2:closing', function(e){
-        //     $(e.target).data("select2").$selection.one('focus focusin', function(e){
-        //         e.stopPropagation();
-        //     });
-        // });
-        
         $(function() {
             //Initialize Select2 Elements
             $('.select2').select2()
