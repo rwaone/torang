@@ -251,7 +251,6 @@ class KegiatanController extends Controller
      */
     public function daftarPegawai()
     {
-        $this->authorize('struktural');
         if (auth()->user()->role == 'Admin Provinsi') {
             $satker = Satker::all();
             $pegawais = Pegawai::all();
