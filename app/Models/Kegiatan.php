@@ -84,7 +84,7 @@ class Kegiatan extends Model
                     ->where('pegawai_id',$pegawai_id)
                     ->whereMonth('tanggal', $bulan)
                     ->whereYear('tanggal', $tahun)
-                    ->get();
+                    ->get('flag');
         return $flag;
     }
 }
