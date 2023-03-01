@@ -256,7 +256,7 @@ class KegiatanController extends Controller
             $pegawais = Pegawai::all();
         }else {
             $satker = Satker::where('id',auth()->user()->pegawai->satker_id)->get();
-            $pegawais = Pegawai::where('penilai_id', auth()->user()->pegawai->id);
+            $pegawais = Pegawai::where('penilai_id', auth()->user()->pegawai->id)->get();
         }
         // $anggota_id = Timkerja::getMyAnggotaId();
         return view('pages.kegiatan.daftarpegawai', [
