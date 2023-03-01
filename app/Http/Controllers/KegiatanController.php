@@ -84,7 +84,7 @@ class KegiatanController extends Controller
             ]);
             $validatedData['tanggal'] = date('Y-m-d', strtotime($request['tanggal']));
             $validatedData['pegawai_id'] = auth()->user()->pegawai->id;
-            $validatedData['flag'] = NULL;
+            $validatedData['flag'] = 0;
             $url = 'kegiatan';
         }
 

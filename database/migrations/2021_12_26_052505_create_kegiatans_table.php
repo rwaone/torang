@@ -28,7 +28,7 @@ class CreateKegiatansTable extends Migration
             $table->integer('realisasi')->nullable();
             $table->text('keterangan');
             $table->smallinteger('nilai')->nullable();
-            $table->char('flag',1)->nullable();
+            $table->char('flag',1)->default(0);
             $table->char('konfirmasi')->nullable();
             $table->timestamps();
         });

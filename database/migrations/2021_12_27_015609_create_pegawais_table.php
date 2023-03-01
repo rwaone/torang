@@ -24,6 +24,7 @@ class CreatePegawaisTable extends Migration
             $table->foreignId('jabatan_id',2);
             $table->foreignId('satker_id',4);
             $table->foreignId('atasan_id',18);
+            $table->foreignId('penilai_id',18);
             $table->string('foto')->default('foto-pegawai/user.png');
             $table->string('status',20)->default('Aktif');
             $table->timestamps();
