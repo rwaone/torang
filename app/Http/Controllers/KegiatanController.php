@@ -258,7 +258,7 @@ class KegiatanController extends Controller
             $pegawais = Pegawai::all();
         } elseif (auth()->user()->role == 'Admin Satker'){
             $satker = Satker::where('id',auth()->user()->pegawai->satker_id)->get();
-            $pegawais = Pegawai::where('satker_id', auth()->user()->satker_id)->get();
+            $pegawais = Pegawai::where('satker_id', auth()->user()->pegawai->satker_id)->get();
         }else {
             $satker = Satker::where('id',auth()->user()->pegawai->satker_id)->get();
             $pegawais = Pegawai::where('penilai_id', auth()->user()->pegawai->id)->get();
